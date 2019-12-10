@@ -1,0 +1,10 @@
+<h1>Building List</h1>
+
+{{#each building}}
+<ul>
+    <li>
+        <p><a href="/buildings/{{this._id}}"><h3>{{this.name}}</h3></a></p>
+        <p><h5>{{this.address}}</h5></p>
+    </li>
+</ul>
+{{/each}}
