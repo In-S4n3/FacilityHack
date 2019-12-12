@@ -11,7 +11,7 @@ const buildings = [
     builder: "Somague",
     floors: 10,
     numOfApartments: 19,
-    yearOfConstruction: Date('1980-08-17'),
+    yearOfConstruction: '1980-08-17',
     numOfElevators: 2,
   }, 
   {
@@ -20,7 +20,7 @@ const buildings = [
     builder: "Mota-Engil",
     floors: 15,
     numOfApartments: 45,
-    yearOfConstruction: Date('1985-10-01'),
+    yearOfConstruction: '1985-10-01',
     numOfElevators: 2,
   }
 ]

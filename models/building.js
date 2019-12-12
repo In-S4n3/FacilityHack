@@ -8,7 +8,7 @@ const buildingSchema = new Schema({
   builder: String,
   floors: Number,
   numOfApartments: Number,
-  yearOfConstruction: Date,
+  yearOfConstruction: String,
   numOfElevators: Number,
 }, {
   timestamps: {
