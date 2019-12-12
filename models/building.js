@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
-// A nossa blueprint(planta) para cada livro que adicionar-mos
+// A nossa blueprint(planta) para cada edificio que adicionar-mos
 const buildingSchema = new Schema({
   name: String,
+  buildingNif: Number,
   address: String,
   builder: String,
   floors: Number,

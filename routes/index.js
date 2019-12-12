@@ -19,6 +19,8 @@ router.get("/buildings", (req, res, next) => {
     });
 });
 
+//CRIAR AQUI AS ROUTES SEGUINTES
+
 // DETALHES DOS EDIFICIOS
 router.get('/buildings/:buildingId', (req, res, next) => {
   Building.findById(req.params.buildingId)

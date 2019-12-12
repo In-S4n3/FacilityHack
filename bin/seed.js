@@ -7,6 +7,7 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 const buildings = [
   { 
     name: "Edifício Sol",
+    buildingNif: 123456789,
     address: "R. do Junqueiro, lt. 25, Lisboa",
     builder: "Somague",
     floors: 10,
@@ -16,6 +17,7 @@ const buildings = [
   }, 
   {
     name: "Edifício Lua",
+    buildingNif: 213456789,
     address: "Av. 25 de Abril, nº8, Estoril",
     builder: "Mota-Engil",
     floors: 15,
