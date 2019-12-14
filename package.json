@@ -20,5 +20,17 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  }
+  },
+  "description": "A tool for building maintenace.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/In-S4n3/FacilityHack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/In-S4n3/FacilityHack/issues"
+  },
+  "homepage": "https://github.com/In-S4n3/FacilityHack#readme"
 }
