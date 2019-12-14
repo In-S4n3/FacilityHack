@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/In-S4n3/FacilityHack/issues"
   },
-  "homepage": "https://github.com/In-S4n3/FacilityHack#readme"
+  "homepage": "https://github.com/In-S4n3/FacilityHack#readme",
+  "bin": {
+    "facilityhack": "seed.js"
+  }
 }
