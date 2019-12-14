@@ -71,4 +71,27 @@ a {
   .topnav input[type=text] {
     border: 1px solid #ccc; } }
 
+#container-for-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px; }
+
+#container-for-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px; }
+
+.container-section-2 {
+  display: flex;
+  justify-content: center; }
+
+.container-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.container-img {
+  display: flex;
+  justify-content: flex-end; }
+
 /*# sourceMappingURL=style.css.map */
