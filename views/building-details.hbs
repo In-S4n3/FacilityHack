@@ -1,10 +1,33 @@
-<h1>Building Details</h1>
-<br>
-<h2>{{building.name}}</h2>
-<p>Built by: <h3>{{building.builder}}</h3></p>
-<p>Year of Construction: <h3>{{building.yearOfConstruction}}</h3></p>
-<p>Number of floors: <h3>{{building.floors}}</h3></p>
-<p>Address: <h3>{{building.address}}</h3></p>
-<p>Elevators: <h3>{{building.numOfElevators}}</h3></p>
-<br>
+<div>
+  <h2>Building Details</h2>
+  <br>
+  <h2>{{building.name}}</h2>
+  <p>Built by: <h3>{{building.builder}}</h3></p>
+  <p>Year of Construction: <h3>{{building.yearOfConstruction}}</h3></p>
+  <p>Number of floors: <h3>{{building.floors}}</h3></p>
+  <p>Address: <h3>{{building.address}}</h3></p>
+  <p>Elevators: <h3>{{building.numOfElevators}}</h3></p>
+  <br>
+</div>
+
+<div>
+  <h2>Building Issues</h2>
+
+{{!-- SOLVE THIS PAGE AND DELETE THIS LINK <a href="/buildings/:buildingId/report-issue">Report New Issue</a> --}}
+
+  <button onclick="myFunction()">Report New Issue</button>
+  <div id="addIssues">
+    <form action="/submit" method="GET">
+      <label for="">Resident</label>
+        <input type="text" name="resident" id="">
+      <label for="">What's the issue?</label>
+        <input type="text" name="issueType" id="">
+      <label for="">Comment</label>
+        <input type="text" name="comment" id="">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</div>
+
 <a href="/buildings">Return to Main Page</a>

@@ -23,7 +23,7 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.19.4"
   },
   "description": "A tool for building maintenace.",
   "main": "app.js",
