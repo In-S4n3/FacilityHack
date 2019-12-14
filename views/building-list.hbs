@@ -1,10 +1,23 @@
 <h1>Building List</h1>
 
+<form action="">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit">Submit</button>
+</form>
+<div>
+    <a href="/logout">Logout</a>
+</div>
+
+
 {{#each building}}
 <ul>
     <li>
-        <p><a href="/buildings/{{this._id}}"><h3>{{this.name}}</h3></a></p>
-        <p><h5>{{this.address}}</h5></p>
+        <p><a href="/buildings/{{this._id}}">
+                <h3>{{this.name}}</h3>
+            </a></p>
+        <p>
+            <h5>{{this.address}}</h5>
+        </p>
     </li>
 </ul>
 {{/each}}

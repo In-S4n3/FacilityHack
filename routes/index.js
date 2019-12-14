@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
 router.get("/buildings", (req, res, next) => {
   Building.find()
     .then(allTheBuildingsFromTheList => {
-      console.log(allTheBuildingsFromTheList);
+      //console.log(allTheBuildingsFromTheList);
       res.render("building-list", { building: allTheBuildingsFromTheList });
     })
     .catch(error => {
