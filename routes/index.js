@@ -92,6 +92,18 @@ router.post('/buildings/edit', (req, res, next) => {
   })
 });
 
+//DELETE ROUTE
+router.post("/buildings/:buildingId/delete", (req, res) => {
+  console.log("preparing to delete", req.params.buildingId);
+  Building.findByIdAndRemove(req.params.buildingId)
+    .then(() => {
+      res.redirect("/buildings");
+    })
+    .catch(error => {
+      console.log("Error while retrieving book details: ", error);
+    });
+});
+
 //ABOUT ROUTE
 router.get('/about', (req, res, next) => {
   res.render('about')

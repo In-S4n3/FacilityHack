@@ -3,6 +3,8 @@ const Schema   = mongoose.Schema;
 
 // A nossa blueprint(planta) para cada user que adicionar-mos
 const userSchema = new Schema({
+  firstName: String,
+  lastName: String,
   username: String,
   password: String
 }, {
