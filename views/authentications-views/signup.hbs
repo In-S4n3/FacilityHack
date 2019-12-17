@@ -1,17 +1,34 @@
-<h1>Sign Up Page</h1>
+<div class="h2-stylings">
+  <h2>Sign Up Page</h2>
+</div>
 
 <form id="form" action="/signup" method="POST">
-  <label for="username">Username</label><br>
-  <input type="text" name="username" placeholder="Your username">
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" name="fistName" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" name="lastName" placeholder="Last name">
+    </div>
+    <br>
+  </div>
+  <br>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username"
+    placeholder="Your username">
+  <br>
 
-  <label for="password">Password</label><br>
-  <input type="password" name="password" placeholder="********">
+  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password"
+    placeholder="********">
+  <br>
 
-  <label for="password2">Confirm Password</label><br>
-  <input type="password" name="password2" placeholder="********">
+  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password2"
+    placeholder="********">
+
+
 
   {{#if errorMessage}}
   <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
-  <button type="submit">Create account</button>
+  <br>
+  <button class="button" type="submit">Create Account</button>
 </form>

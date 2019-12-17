@@ -1,16 +1,14 @@
-<h1>Building List</h1>
-
-<form action="">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit">Submit</button>
-</form>
-<div>
-    <a href="/logout">Logout</a>
+<div class="h2-stylings">
+    <h2>Building List</h2>
 </div>
 
+{{!-- <div>
+    <a href="/logout">Logout</a>
+</div> --}}
 
-{{#each building}}
-<ul>
+<br>
+
+{{!-- <ul>
     <li>
         <p><a href="/buildings/{{this._id}}">
                 <h3>{{this.name}}</h3>
@@ -19,6 +17,28 @@
             <h5>{{this.address}}</h5>
         </p>
     </li>
-</ul>
-{{/each}}
+</ul> --}}
 
+<div class="container">
+    <div class="row">
+        {{#each building}}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/buildings/{{this._id}}">{{this.name}} </a></h5>
+                    <p class="card-text"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{this.address}}</li>
+                </ul>
+                {{!-- <div class="card-body">
+                    <a href="#" class="card-link">Delete</a>
+                </div> --}}
+            </div>
+            <br>
+        </div>
+        <br>
+        {{/each}}
+    </div>
+</div>

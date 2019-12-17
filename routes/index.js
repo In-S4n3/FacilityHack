@@ -92,6 +92,16 @@ router.post('/buildings/edit', (req, res, next) => {
   })
 });
 
+//ABOUT ROUTE
+router.get('/about', (req, res, next) => {
+  res.render('about')
+})
+
+//CONTACT ROUTE
+router.get('/contact', (req, res, next) => {
+  res.render('contact')
+})
+
 // DETALHES DOS EDIFICIOS
 router.get("/buildings/:buildingId", (req, res, next) => {
   Building.findById(req.params.buildingId)

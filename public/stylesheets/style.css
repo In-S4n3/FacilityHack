@@ -94,4 +94,17 @@ a {
   display: flex;
   justify-content: flex-end; }
 
+.button {
+  background-color: #4bb5f2;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px; }
+
+.h2-stylings {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0px; }
+
 /*# sourceMappingURL=style.css.map */

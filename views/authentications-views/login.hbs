@@ -1,19 +1,20 @@
-<h1>Log In Page</h1>
+<div class="h2-stylings">
+  <h2>Login Page</h2>
+</div>
 
 <form action="/login" method="POST" id="form">
-  <h2>Login</h2>
 
   <label for="username">Username</label>
-  <input type="text" name="username">
-
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+  <br>
   <label for="password">Password</label>
-  <input type="password" name="password">
+  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password">
 
   {{#if errorMessage }}
   <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
 
-  <button>Sign in</button>
+  <button class="button">Sign in</button>
 
   <p class="account-message">
     Don't have an account? <a href="/signup">Sign up</a>
