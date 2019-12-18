@@ -1,0 +1,32 @@
+<div class="h2-stylings">
+  <h2>Company Details</h2>
+</div>
+
+<br>
+<div>
+  <h3>{{company.name}}</h3>
+  <br><br>
+  <p>Type of Services: <h4>{{company.typeOfServices}}</h4>
+  </p>
+  <p>Years of Activity: <h4>{{company.yearsOfactivity}}</h4>
+  </p>
+  <p>Address: <h4>{{company.address}}</h4>
+  </p>
+  
+</div>
+
+
+
+<br>
+<a class="button-1" href="/companies/edit?building_id={{company._id}}">Edit</a>
+
+<br>
+
+<div>
+  <form action="/companies/{{company._id}}/delete" method="POST">
+    <button class="button-1" type="submit">Delete</button>
+  </form>
+</div>
+
+<br>
+<a href="/companies">Return to Main Page</a class="button">
