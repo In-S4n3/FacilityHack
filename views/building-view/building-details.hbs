@@ -1,0 +1,34 @@
+<div class="h2-stylings">
+  <h2>Building Details</h2>
+</div>
+
+<br>
+<div>
+  <h3>{{building.name}}</h3>
+  <br><br>
+  <p>Built by: <h4>{{building.builder}}</h4>
+  </p>
+  <p>Year of Construction: <h4>{{building.yearOfConstruction}}</h4>
+  </p>
+  <p>Number of floors: <h4>{{building.floors}}</h3>
+  </p>
+  <p>Address: <h4>{{building.address}}</h4>
+  </p>
+  
+</div>
+
+
+
+<br>
+<a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
+
+<br>
+
+<div>
+  <form action="/buildings/{{building._id}}/delete" method="POST">
+    <button class="button-1" type="submit">Delete</button>
+  </form>
+</div>
+
+<br>
+<a href="/buildings">Return to Main Page</a class="button">

@@ -7,6 +7,7 @@ a {
   color: #00B7FF;
 }
 
+
 //NAV BAR CSS
 /* Style the navbar */
 .topnav {
@@ -86,4 +87,67 @@ a {
   }
 }
 
-//
+//HOME PAIGE CSS
+#container-for-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+#container-for-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+}
+
+.container-section-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.container-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container-img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// FORMS STYLING
+
+.button {
+  background-color: #4bb5f2;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.button-1 {
+  background-color: #4bb5f2;
+  color: white;
+  padding: 5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.h2-stylings {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0px;
+}
+
+.login-text {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  padding: 17px 10px 0 0;
+  color: #357cf0;
+}
