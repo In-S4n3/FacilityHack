@@ -3,9 +3,19 @@ const router = express.Router();
 const Building = require("../models/building.js");
 const Company = require("../models/company.js");
 
+
+// router.use((req, res, next) => {
+//   res.locals.user = req.session.currentUser
+//   next();
+// });
+
+
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  let user = req.session.currentUser;
+  res.render("index", {
+    user
+  })
 });
 
 // LISTA DE EDIFICIOS

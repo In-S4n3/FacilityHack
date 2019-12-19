@@ -119,4 +119,8 @@ a {
   display: flex;
   justify-content: center; }
 
+.login {
+  padding: 17px 10px 0 0;
+  color: #357cf0; }
+
 /*# sourceMappingURL=style.css.map */

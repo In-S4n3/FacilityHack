@@ -34,7 +34,7 @@ app.use(cookieParser());
 // LOGIN SESSION
 app.use(session({
   secret: "basic-auth-secret",
-  cookie: { maxAge: 120000 }, // 2 minutes
+  cookie: { maxAge: 600000 }, // 4 minutes
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day

@@ -17,22 +17,43 @@
     <a class="active" href="/">FacilityHack</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+
+    {{#if user}}
+
+    <div class="login-container">
+      <form action="/logout">
+        <button type="submit">Logout</button>
+      </form>
+    </div>
+
+    {{else}}
+
     <div class="login-container">
       <form action="/login">
         <button type="submit">Login</button>
-      </form>
     </div>
+    </form>
+
     <div class="login-container">
       <form action="/signup">
         <button type="submit">Signup</button>
       </form>
     </div>
+
+    {{/if}}
+
+    <div class="login-container login">
+      {{#if user}}
+      Welcome, {{user.username}}
+      {{/if}}
+    </div>
+
   </div>
 
 
   {{{body}}}
 
-  
+
   <script src="/javascripts/script.js"></script>
 </body>
 
