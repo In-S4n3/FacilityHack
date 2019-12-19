@@ -3,7 +3,8 @@ const Schema   = mongoose.Schema;
 
 // Issue details
 const issueDetails = new Schema({
-  resident: String,
+  building: { type : Schema.Types.ObjectId, ref: 'Building' },
+  residentName: String,
   issueType: String,
   comment: String,
 }, {

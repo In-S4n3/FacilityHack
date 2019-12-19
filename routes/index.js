@@ -20,11 +20,16 @@ router.get("/buildings", (req, res, next) => {
 });
 
 //CRIAR AQUI AS ROUTES SEGUINTES
+router.get('/buildings/add', (req, res, next) => {
+  res.render("building-add");
+});
+
 
 // DETALHES DOS EDIFICIOS
 router.get('/buildings/:buildingId', (req, res, next) => {
   Building.findById(req.params.buildingId)
     .then(theBuilding => {
+      
       res.render("building-details", { building: theBuilding });
     })
     .catch(error => {
