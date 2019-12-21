@@ -1,9 +1,9 @@
-<div class="container">
+<div class="h2-stylings">
   <h3>{{building.name}}</h3>
-  <hr>
+</div>
+<div class="container">
   <div class="row">
     <div class="col">
-
       <h4>Building Details</h4>
       <br>
       <p>Built by: <h5>{{building.builder}}</h5>
@@ -18,47 +18,81 @@
       </p>
       <br>
 
+      <a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
+      <br>
+      <div>
+        <form action="/buildings/{{building._id}}/delete" method="POST">
+          <button class="button-1" type="submit">Delete</button>
+        </form>
+      </div>
+      <br>
     </div>
+
+
     <div class="col">
-
-      <h4>Building Issues</h4>
-
-      {{#each issue}}
-      <h3>{{this.residentName}}</h3>
-      <h5>{{this.issueType}}</h5>
-      {{/each}}
-
-      <button onclick="myFunction()">Report New Issue</button>
-
-      <div id="addIssues" style="display: none;">
-        <form action="/submit" method="GET">
-          <label for="">Building</label>
-          <input type="text" name="building" id="">
-          <label for="">Resident Name</label>
-          <input type="text" name="resident" id="">
-          <label for="">What's the issue?</label>
-          <input type="text" name="issueType" id="">
-          <label for="">Comment</label>
-          <input type="text" name="comment" id="">
-          <button type="submit">Submit</button>
+      <div class="form-group form-color">
+        <form action="/buildings/{{building._id}}/issues/add" method="post">
+          <h4>Insert an Issue</h4>
+          <br>
+          <label>Username:</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName">
+          <br>
+          <label for="">Floor:</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor">
+          <br>
+          <label for="">Apartment:</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apartment">
+          <br>
+          <label for="">Type of issue:</label>
+          <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Cracks">Cracks</option>
+            <option value="Elevators">Elevators</option>
+            <option value="Inflitrations">Inflitrations</option>
+            <option value="TV Signal">TV Signal</option>
+            <option value="Home Appliances">Home Appliances</option>
+            <option value="Others">Others</option>
+          </select>
+          <br>
+          <label for="">Commentary:</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="comment">
+          <br>
+          <button class="button" type="submit">ADD</button>
         </form>
       </div>
 
     </div>
   </div>
 
+  <hr>
 
-
+  <h4>Building Issues</h4>
   <br>
-  <a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
-
-  <br>
-
-  <div>
-    <form action="/buildings/{{building._id}}/delete" method="POST">
-      <button class="button-1" type="submit">Delete</button>
-    </form>
+  {{#each issue}}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <p><b>User:</b><br>{{this.userName}}</p>
+      </div>
+      <div class="col-sm">
+        <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
+      </div>
+      <div class="col-sm">
+        <p><b>Floor:</b><br>{{this.floor}}</p>
+      </div>
+      <div class="col-sm">
+        <p><b>Appartment:</b><br>{{this.apartment}}</p>
+      </div>
+      <div class="col-sm">
+        <p><b>Commentary:</b><br>{{this.comment}}</p>
+      </div>
+    </div>
   </div>
+  <hr>
+  {{/each}}
+</div>
+<br>
 
-  <br>
-  <a href="/buildings">Return to Main Page</a class="button">
+<br>
+<a href="/buildings">Return to Building list</a class="button">
+</div>
