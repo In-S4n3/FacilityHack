@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Building = require("../models/building.js");
 const Company = require("../models/company.js");
-const Issues = require("../models/issues.js");
+const Issue = require("../models/issue.js");
 
 // router.use((req, res, next) => {
 //   res.locals.user = req.session.currentUser
@@ -250,7 +250,7 @@ router.get("/contact", (req, res, next) => {
 router.get("/buildings/:buildingId", (req, res, next) => {
   Building.findById(req.params.buildingId)
     .then(theBuilding => {
-      Issues.find().then(allTheIssuesFromTheList => {
+      Issue.find({building: theBuilding._id}).then(allTheIssuesFromTheList => {
         //console.log(allTheIssuesFromTheList);
         res.render("building-view/building-details", {
           building: theBuilding,
@@ -263,37 +263,29 @@ router.get("/buildings/:buildingId", (req, res, next) => {
     });
 });
 
-
-
-router.get("/buildings/add", (req, res, next) => {
-  res.render("building-view/building-add");
-});
-
-router.post("/buildings/add", (req, res, next) => {
+// ROUTE PARA ADICIONAR ANOMALIAS
+router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
+  let buildingId = req.params.buildingId;
+  console.log("buildingid", buildingId);
   const {
-    name,
-    buildingNif,
-    address,
-    builder,
-    floors,
-    numOfApartments,
-    yearOfConstruction,
-    numOfElevators
+    userName,
+    floor,
+    apartment,
+    issueType,
+    comment
   } = req.body;
-  const newBuilding = new Building({
-    name,
-    buildingNif,
-    address,
-    builder,
-    floors,
-    numOfApartments,
-    yearOfConstruction,
-    numOfElevators
+  const newIssue = new Issue({
+    "building" : buildingId,
+    userName,
+    floor,
+    apartment,
+    issueType,
+    comment
   });
-  newBuilding
+  newIssue
     .save()
     .then(building => {
-      res.redirect("/buildings");
+      res.redirect(`/buildings/${buildingId}`);
     })
     .catch(error => {
       console.log(error);
