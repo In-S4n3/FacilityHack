@@ -25,35 +25,40 @@
 <div class="card-deck">
   <div class="card">
     <img class="card-img-top"
-      src="https://www.wbcsd.org/var/site/storage/images/programs/cities-and-mobility/sustainable-cities/science-based-targets/resources/framework-carbon-emissions-management-building-construction-value-chain/91649-3-eng-GB/SBT4b-Framework-Scoping-paper_i1140.jpg"
+      src="https://s3-us-west-1.amazonaws.com/acropolis-wp-content-uploads/2019/05/BigRentz_ConstructionRiskManagement_Hero.png"
       alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Find a Companie</h5>
       <p class="card-text">You have a problem? Find a companie to help you!</p>
       <div id="container-for-buttons">
+        {{#if user}}
         <a href="/companies/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
           class="buttons-index">Add Company</a>
 
         <a href="/companies" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
           class="buttons-index">Consult Companies</a>
+        {{/if}}
       </div>
     </div>
   </div>
 
   <div class="card">
-    <img class="card-img-top" src="https://www.buildingincloud.net/wp-content/uploads/2019/09/innovation-of-fm.jpg"
+    <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/acropolis-wp-content-uploads/bigrentz-recruiting-skilled-workers-hero-large.png"
       alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Tune UP your building</h5>
-      <p class="card-text">We are here to make your building last longer, value more and look better</p>
+      <h5 class="card-title">Find your Building</h5>
+      <p class="card-text">Report the pathologies of your building, we will help you fix it without you even have to leave your confort</p>
     </div>
     <div id="container-for-buttons">
+
+      {{#if user}}
       <a href="/buildings/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
         class="buttons-index">Add Building</a>
 
       <a href="/buildings" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
-        class="buttons-index">Join
-        Building</a>
+        class="buttons-index">Consult
+        Buildings</a>
+      {{/if}}
     </div>
   </div>
 </div>

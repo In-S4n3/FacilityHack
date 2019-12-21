@@ -2,20 +2,19 @@ const express = require("express");
 const router = express.Router();
 const Building = require("../models/building.js");
 const Company = require("../models/company.js");
-
+const Issues = require("../models/issues.js");
 
 // router.use((req, res, next) => {
 //   res.locals.user = req.session.currentUser
 //   next();
 // });
 
-
 /* GET home page */
 router.get("/", (req, res, next) => {
   let user = req.session.currentUser;
   res.render("index", {
     user
-  })
+  });
 });
 
 // LISTA DE EDIFICIOS
@@ -234,16 +233,61 @@ router.get("/contact", (req, res, next) => {
 
 //===================================================================================
 
-// DETALHES DOS EDIFICIOS
+// DETALHES DOS EDIFICIOS E ANOMALIAS
 router.get("/buildings/:buildingId", (req, res, next) => {
   Building.findById(req.params.buildingId)
     .then(theBuilding => {
-      res.render("building-view/building-details", { building: theBuilding });
+      Issues.find().then(allTheIssuesFromTheList => {
+        //console.log(allTheIssuesFromTheList);
+        res.render("building-view/building-details", {
+          building: theBuilding,
+          issue: allTheIssuesFromTheList
+        });
+      });
     })
     .catch(error => {
       console.log("Error while retrieving building details: ", error);
     });
 });
+
+
+
+router.get("/buildings/add", (req, res, next) => {
+  res.render("building-view/building-add");
+});
+
+router.post("/buildings/add", (req, res, next) => {
+  const {
+    name,
+    buildingNif,
+    address,
+    builder,
+    floors,
+    numOfApartments,
+    yearOfConstruction,
+    numOfElevators
+  } = req.body;
+  const newBuilding = new Building({
+    name,
+    buildingNif,
+    address,
+    builder,
+    floors,
+    numOfApartments,
+    yearOfConstruction,
+    numOfElevators
+  });
+  newBuilding
+    .save()
+    .then(building => {
+      res.redirect("/buildings");
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
+//===================================================================================
 
 // DETALHES DAS EMPRESAS
 router.get("/companies/:companyId", (req, res, next) => {

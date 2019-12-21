@@ -1,34 +1,64 @@
-<div class="h2-stylings">
-  <h2>Building Details</h2>
-</div>
-
-<br>
-<div>
+<div class="container">
   <h3>{{building.name}}</h3>
-  <br><br>
-  <p>Built by: <h4>{{building.builder}}</h4>
-  </p>
-  <p>Year of Construction: <h4>{{building.yearOfConstruction}}</h4>
-  </p>
-  <p>Number of floors: <h4>{{building.floors}}</h3>
-  </p>
-  <p>Address: <h4>{{building.address}}</h4>
-  </p>
-  
-</div>
+  <hr>
+  <div class="row">
+    <div class="col">
+
+      <h4>Building Details</h4>
+      <br>
+      <p>Built by: <h5>{{building.builder}}</h5>
+      </p>
+      <p>Year of Construction: <h5>{{building.yearOfConstruction}}</h5>
+      </p>
+      <p>Number of floors: <h5>{{building.floors}}</h5>
+      </p>
+      <p>Address: <h5>{{building.address}}</h5>
+      </p>
+      <p>Elevators: <h5>{{building.numOfElevators}}</h5>
+      </p>
+      <br>
+
+    </div>
+    <div class="col">
+
+      <h4>Building Issues</h4>
+
+      {{#each issue}}
+      <h3>{{this.residentName}}</h3>
+      <h5>{{this.issueType}}</h5>
+      {{/each}}
+
+      <button onclick="myFunction()">Report New Issue</button>
+
+      <div id="addIssues" style="display: none;">
+        <form action="/submit" method="GET">
+          <label for="">Building</label>
+          <input type="text" name="building" id="">
+          <label for="">Resident Name</label>
+          <input type="text" name="resident" id="">
+          <label for="">What's the issue?</label>
+          <input type="text" name="issueType" id="">
+          <label for="">Comment</label>
+          <input type="text" name="comment" id="">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
 
 
 
-<br>
-<a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
+  <br>
+  <a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
 
-<br>
+  <br>
 
-<div>
-  <form action="/buildings/{{building._id}}/delete" method="POST">
-    <button class="button-1" type="submit">Delete</button>
-  </form>
-</div>
+  <div>
+    <form action="/buildings/{{building._id}}/delete" method="POST">
+      <button class="button-1" type="submit">Delete</button>
+    </form>
+  </div>
 
-<br>
-<a href="/buildings">Return to Main Page</a class="button">
+  <br>
+  <a href="/buildings">Return to Main Page</a class="button">
