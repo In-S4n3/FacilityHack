@@ -26,9 +26,11 @@
       {{#each issue}}
       <h3>{{this.residentName}}</h3>
       <h5>{{this.issueType}}</h5>
+        {{else}}
+          <p>There are no Issues for this Building!</p>
       {{/each}}
 
-      <button onclick="myFunction()">Report New Issue</button>
+      <button class="btn btn-danger" onclick="myFunction()">Report New Issue</button>
 
       <div id="addIssues" style="display: none;">
         <form action="/submit" method="GET">

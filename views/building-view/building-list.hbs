@@ -1,7 +1,3 @@
-<div class="h2-stylings">
-    <h2>Building List</h2>
-</div>
-
 {{!-- <div>
     <a href="/logout">Logout</a>
 </div> --}}
@@ -11,16 +7,37 @@
 {{!-- <ul>
     <li>
         <p><a href="/buildings/{{this._id}}">
-                <h3>{{this.name}}</h3>
-            </a></p>
+            <h3>{{this.name}}</h3>
+        </a></p>
         <p>
             <h5>{{this.address}}</h5>
         </p>
     </li>
 </ul> --}}
 
+
 <div class="container">
     <div class="row">
+        <div class="col">
+
+            <div class="h2-stylings">
+                <h2>Building List</h2>
+            </div>
+
+        </div>
+        <div class="col">
+
+            <!-- Search form -->
+            <form class="form-inline md-form mr-auto mb-4" action="/buildings/search" method="GET">
+                <input class="form-control mr-sm-2" type="text" placeholder="Find your Building here" name="name" aria-label="Search">
+                <button class="btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+            </form>
+
+        </div>
+</div>
+<div class="container">
+    <div class="row">
+        
         {{#each building}}
         <div class="col">
             <div class="card" style="width: 18rem;">
@@ -38,5 +55,6 @@
         </div>
         <br>
         {{/each}}
+
     </div>
 </div>

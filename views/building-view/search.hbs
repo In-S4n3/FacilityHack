@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      
+      {{#each building}}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><a href="/buildings/{{this._id}}">{{this.name}} </a></h5>
+            <p>{{this.address}}</p>
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+    <div class="col">
+      
+      <div class="col">
+
+            Search for other building
+            <!-- Search form -->
+            <form class="form-inline md-form mr-auto mb-4" action="/buildings/search" method="GET">
+                <input class="form-control mr-sm-2" type="text" placeholder="Find your Building here" name="name" aria-label="Search">
+                <button class="btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+            </form>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Your Builging is not here?</h5>
+                    <p class="card-text">Just take a minute to add it.</p>
+                    <a href="http://localhost:3000/buildings/add" class="btn btn-primary">Add Now</a>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+    </div>
+

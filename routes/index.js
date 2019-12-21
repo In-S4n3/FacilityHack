@@ -31,6 +31,19 @@ router.get("/buildings", (req, res, next) => {
     });
 });
 
+// Pesquisar Edificios
+router.get('/buildings/search',(req, res, next) => {
+  const name = req.query.name
+  Building.find({name: name})
+  .then(allTheBuildingsFromTheSearch => {
+    console.log(allTheBuildingsFromTheSearch)
+    res.render("building-view/search", {building: allTheBuildingsFromTheSearch})
+  })
+  .catch(error => {
+    console.log("there was an error here>>>>", error)
+  })
+});
+
 // LISTA DE EMPRESAS
 router.get("/companies", (req, res, next) => {
   Company.find()
