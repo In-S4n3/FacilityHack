@@ -8,6 +8,8 @@ const companySchema = new Schema({
   address: String,
   typeOfServices: String,
   yearsOfactivity: Number,
+  imgName: String,
+  imgPath: String,
 }, {
   timestamps: {
     createdAt: "created_at",

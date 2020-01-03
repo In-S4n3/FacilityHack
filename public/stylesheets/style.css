@@ -103,6 +103,14 @@ a {
   border: none;
   border-radius: 4px; }
 
+.button-search {
+  background-color: #4bb5f2;
+  color: white;
+  padding: 7px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px; }
+
 .button-1 {
   background-color: #4bb5f2;
   color: white;

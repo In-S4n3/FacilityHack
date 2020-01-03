@@ -1,60 +1,38 @@
-{{!-- <div>
-    <a href="/logout">Logout</a>
-</div> --}}
-
 <br>
 
-{{!-- <ul>
-    <li>
-        <p><a href="/buildings/{{this._id}}">
-            <h3>{{this.name}}</h3>
-        </a></p>
-        <p>
-            <h5>{{this.address}}</h5>
-        </p>
-    </li>
-</ul> --}}
+<form class="form-inline md-form mr-auto mb-4 h2-stylings" action="/buildings/search" method="GET">
+    <input class="form-control mr-sm-2" type="text" placeholder="Find your Building here" name="name"
+        aria-label="Search">
+    <button class="button-search btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+</form>
 
 
 <div class="container">
-    <div class="row">
-        <div class="col">
+    <div class="h2-stylings">
+        <h2>Building List</h2>
+    </div>
 
-            <div class="h2-stylings">
-                <h2>Building List</h2>
-            </div>
+    <div class="container">
+        <div class="row">
 
-        </div>
-        <div class="col">
-
-            <!-- Search form -->
-            <form class="form-inline md-form mr-auto mb-4" action="/buildings/search" method="GET">
-                <input class="form-control mr-sm-2" type="text" placeholder="Find your Building here" name="name" aria-label="Search">
-                <button class="btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-            </form>
-
-        </div>
-</div>
-<div class="container">
-    <div class="row">
-        
-        {{#each building}}
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><a href="/buildings/{{this._id}}">{{this.name}} </a></h5>
-                    <p class="card-text"></p>
+            {{#each building}}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{this.imgPath}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/buildings/{{this._id}}">{{this.name}} </a></h5>
+                        <p class="card-text"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{this.address}}</li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{this.address}}</li>
-                </ul>
+                <br>
             </div>
             <br>
-        </div>
-        <br>
-        {{/each}}
+            {{/each}}
 
+        </div>
     </div>
+    <a href="/">Retun to main page</a>
 </div>
