@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start-dynamic": "nomdemon ./bin/www",
     "start": "node ./bin/www",
     "dev": "DEBUG=facilityhack:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"

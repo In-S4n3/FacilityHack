@@ -1,10 +1,9 @@
 const express = require("express");
-const uploadCloud = require('../config/cloudinary.js');
+const uploadCloud = require("../config/cloudinary.js");
 const router = express.Router();
 const Building = require("../models/building.js");
 const Company = require("../models/company.js");
 const Issue = require("../models/issue.js");
-
 
 // router.use((req, res, next) => {
 //   res.locals.user = req.session.currentUser
@@ -24,7 +23,9 @@ router.get("/", (req, res, next) => {
 // PESQUISA
 router.get("/buildings/search", (req, res, next) => {
   const name = req.query.name;
-  Building.find({ name: name })
+  Building.find({
+      name: name
+    })
     .then(allTheBuildingsFromTheSearch => {
       console.log(allTheBuildingsFromTheSearch);
       res.render("building-view/search", {
@@ -77,7 +78,9 @@ router.get("/companies", (req, res, next) => {
 //ADICIONAR EDIFICIOS
 router.get("/buildings/add", (req, res, next) => {
   let user = req.session.currentUser;
-  res.render("building-view/building-add", { user });
+  res.render("building-view/building-add", {
+    user
+  });
 });
 
 router.post("/buildings/add", uploadCloud.single("photo"), (req, res, next) => {
@@ -118,7 +121,9 @@ router.post("/buildings/add", uploadCloud.single("photo"), (req, res, next) => {
 // ADICIONAR EMPRESAS
 router.get("/companies/add", (req, res, next) => {
   let user = req.session.currentUser;
-  res.render("company-view/company-add", { user });
+  res.render("company-view/company-add", {
+    user
+  });
 });
 
 router.post("/companies/add", uploadCloud.single("photo"), (req, res, next) => {
@@ -156,99 +161,117 @@ router.post("/companies/add", uploadCloud.single("photo"), (req, res, next) => {
 router.get("/buildings/edit", (req, res, next) => {
   let user = req.session.currentUser;
   //console.log(req.query.building_id);
-  Building.findOne({ _id: req.query.building_id })
+  Building.findOne({
+      _id: req.query.building_id
+    })
     .then(building => {
-      res.render("building-view/building-edit", { building, user });
+      res.render("building-view/building-edit", {
+        building,
+        user
+      });
     })
     .catch(error => {
       console.log(error);
     });
 });
 
-router.post("/buildings/edit", uploadCloud.single("photo"), (req, res, next) => {
-  const {
-    name,
-    buildingNif,
-    address,
-    builder,
-    floors,
-    numOfApartments,
-    yearOfConstruction,
-    numOfElevators
-  } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  Building.update(
-    { _id: req.query.building_id },
-    {
-      $set: {
-        name,
-        buildingNif,
-        address,
-        builder,
-        floors,
-        numOfApartments,
-        yearOfConstruction,
-        numOfElevators,
-        imgPath,
-        imgName
-      }
-    },
-    { new: true }
-  )
-    .then(buildings => {
-      res.redirect("/buildings");
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
+router.post(
+  "/buildings/edit",
+  uploadCloud.single("photo"),
+  (req, res, next) => {
+    const {
+      name,
+      buildingNif,
+      address,
+      builder,
+      floors,
+      numOfApartments,
+      yearOfConstruction,
+      numOfElevators
+    } = req.body;
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+    Building.update({
+        _id: req.query.building_id
+      }, {
+        $set: {
+          name,
+          buildingNif,
+          address,
+          builder,
+          floors,
+          numOfApartments,
+          yearOfConstruction,
+          numOfElevators,
+          imgPath,
+          imgName
+        }
+      }, {
+        new: true
+      })
+      .then(buildings => {
+        res.redirect("/buildings");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+);
 
 // EDITAR EMPRESAS
 router.get("/companies/edit", (req, res, next) => {
   let user = req.session.currentUser;
   //console.log(req.query.company_id);
-  Company.findOne({ _id: req.query.company_id })
+  Company.findOne({
+      _id: req.query.company_id
+    })
     .then(company => {
-      res.render("company-view/company-edit", { company, user });
+      res.render("company-view/company-edit", {
+        company,
+        user
+      });
     })
     .catch(error => {
       console.log(error);
     });
 });
 
-router.post("/companies/edit", uploadCloud.single("photo"), (req, res, next) => {
-  const {
-    name,
-    companyNif,
-    address,
-    typeOfServices,
-    yearsOfactivity
-  } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  Company.update(
-    { _id: req.query.company_id },
-    {
-      $set: {
-        name,
-        companyNif,
-        address,
-        typeOfServices,
-        yearsOfactivity,
-        imgPath,
-        imgName
-      }
-    },
-    { new: true }
-  )
-    .then(companies => {
-      res.redirect("/companies");
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
+router.post(
+  "/companies/edit",
+  uploadCloud.single("photo"),
+  (req, res, next) => {
+    const {
+      name,
+      companyNif,
+      address,
+      typeOfServices,
+      yearsOfactivity
+    } = req.body;
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+    Company.update({
+        _id: req.query.company_id
+      }, {
+        $set: {
+          name,
+          companyNif,
+          address,
+          typeOfServices,
+          yearsOfactivity,
+          imgPath,
+          imgName
+        }
+      }, {
+        new: true
+      })
+      .then(companies => {
+        res.redirect("/companies");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+);
 
 //===================================================================================
 
@@ -269,7 +292,9 @@ router.post("/buildings/:buildingId/delete", (req, res) => {
 //ABOUT ROUTE
 router.get("/about", (req, res, next) => {
   let user = req.session.currentUser;
-  res.render("about", { user });
+  res.render("about", {
+    user
+  });
 });
 
 //===================================================================================
@@ -277,7 +302,9 @@ router.get("/about", (req, res, next) => {
 //CONTACT ROUTE
 router.get("/contact", (req, res, next) => {
   let user = req.session.currentUser;
-  res.render("contact", { user });
+  res.render("contact", {
+    user
+  });
 });
 
 //===================================================================================
@@ -287,16 +314,16 @@ router.get("/buildings/:buildingId", (req, res, next) => {
   let user = req.session.currentUser;
   Building.findById(req.params.buildingId)
     .then(theBuilding => {
-      Issue.find({ building: theBuilding._id }).then(
-        allTheIssuesFromTheList => {
-          //console.log(allTheIssuesFromTheList);
-          res.render("building-view/building-details", {
-            building: theBuilding,
-            issue: allTheIssuesFromTheList,
-            user
-          });
-        }
-      );
+      Issue.find({
+        building: theBuilding._id
+      }).then(allTheIssuesFromTheList => {
+        //console.log(allTheIssuesFromTheList);
+        res.render("building-view/building-details", {
+          building: theBuilding,
+          issue: allTheIssuesFromTheList,
+          user
+        });
+      });
     })
     .catch(error => {
       console.log("Error while retrieving building details: ", error);
@@ -307,7 +334,13 @@ router.get("/buildings/:buildingId", (req, res, next) => {
 router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
   let buildingId = req.params.buildingId;
   console.log("buildingid", buildingId);
-  const { userName, floor, apartment, issueType, comment } = req.body;
+  const {
+    userName,
+    floor,
+    apartment,
+    issueType,
+    comment
+  } = req.body;
   const newIssue = new Issue({
     building: buildingId,
     userName,
@@ -328,12 +361,62 @@ router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
 
 //===================================================================================
 
+//ROUTE PARA EDITAR ANOMALIAS
+router.get("/issues/edit", (req, res, next) => {
+  let user = req.session.currentUser;
+  console.log(req.query.issue_id);
+  Issue.findOne({ _id: req.query.issue_id })
+    .then(issue => {
+      res.render("issue-view/issue-edit", { issue, user });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
+router.post("/issues/edit", (req, res, next) => {
+  let buildingId = req.params.buildingId;
+    const {
+      userName,
+      floor,
+      apartment,
+      issueType,
+      comment
+    } = req.body;
+    Issue.update(
+      { _id: req.query.issue_id },
+      {
+        $set: {
+          building: buildingId,
+          userName,
+          floor,
+          apartment,
+          issueType,
+          comment
+        }
+      },
+      { new: true }
+    )
+      .then(issue => {
+        res.redirect("/buildings-details");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+);
+
+//===================================================================================
+
 // DETALHES DAS EMPRESAS
 router.get("/companies/:companyId", (req, res, next) => {
   let user = req.session.currentUser;
   Company.findById(req.params.companyId)
     .then(theCompany => {
-      res.render("company-view/company-details", { company: theCompany, user });
+      res.render("company-view/company-details", {
+        company: theCompany,
+        user
+      });
     })
     .catch(error => {
       console.log("Error while retrieving company details: ", error);

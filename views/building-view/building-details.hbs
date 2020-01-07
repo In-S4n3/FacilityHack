@@ -1,6 +1,7 @@
 <div class="h2-stylings">
   <h3>{{building.name}}</h3>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -60,7 +61,6 @@
           <button class="button" type="submit">ADD</button>
         </form>
       </div>
-
     </div>
   </div>
 
@@ -69,30 +69,30 @@
   <h4>Building Issues</h4>
   <br>
   {{#each issue}}
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <p><b>User:</b><br>{{this.userName}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Floor:</b><br>{{this.floor}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Appartment:</b><br>{{this.apartment}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Commentary:</b><br>{{this.comment}}</p>
+  <form action="">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <p><b>User:</b><br>{{this.userName}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Floor:</b><br>{{this.floor}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Appartment:</b><br>{{this.apartment}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Commentary:</b><br>{{this.comment}}</p>
+        </div>
+        <a class="button-1" href="/issues/edit?issue_id={{this._id}}">Edit</a>
       </div>
     </div>
-  </div>
-  <hr>
-  {{/each}}
-</div>
-<br>
+    <hr>
+  </form>
 
-<br>
-<a href="/buildings">Return to Building list</a class="button">
+  {{/each}}
+  <a href="/buildings">Return to Building list</a class="button">
 </div>
