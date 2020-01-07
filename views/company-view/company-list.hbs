@@ -1,26 +1,32 @@
-<div class="h2-stylings">
-    <h2>Company List</h2>
-</div>
-
 
 <div class="container">
-    <div class="row">
-        {{#each company}}
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="https://www.rhumbix.com/wp-content/uploads/2018/07/shutterstock_772100623-1080x675.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><a href="/companies/{{this._id}}">{{this.name}} </a></h5>
-                    <p class="card-text"></p>
+    <div class="h2-stylings">
+        <h2>Company List</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            {{#each company}}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{this.imgPath}}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/companies/{{this._id}}">{{this.name}}</a></h5>
+                        <p class="card-text"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{this.address}}</li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{this.address}}</li>
-                </ul>
+                <br>
             </div>
             <br>
+            {{/each}}
+
         </div>
-        <br>
-        {{/each}}
     </div>
+    <a href="/">Retun to main page</a>
 </div>
+
