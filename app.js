@@ -13,7 +13,7 @@ const MongoStore = require("connect-mongo")(session);
 
 
 mongoose
-  .connect('mongodb://localhost/facility-hack', {useNewUrlParser: true})
+  .connect('mongodb://heroku_wxq4tvrz:lunajqr1s7ftd27hqirs5m26p3@ds035016.mlab.com:35016/heroku_wxq4tvrz', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
