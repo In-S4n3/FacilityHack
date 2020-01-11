@@ -354,8 +354,8 @@ router.get("/buildings/:buildingId", (req, res, next) => {
 router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
   let buildingId = req.params.buildingId;
   console.log("buildingid", buildingId);
+  let currentUsername = `${req.session.currentUser.firstName} ${req.session.currentUser.lastName}`
   const {
-    userName,
     floor,
     apartment,
     issueType,
@@ -363,7 +363,7 @@ router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
   } = req.body;
   const newIssue = new Issue({
     building: buildingId,
-    userName,
+    userName: currentUsername,
     floor,
     apartment,
     issueType,
