@@ -1,0 +1,23 @@
+<div class="h2-stylings">
+  <h2>Professional Login Page</h2>
+</div>
+
+<form action="/professional-login" method="POST" id="form">
+
+  <label for="nif">Nif</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nif">
+  <br>
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password">
+
+  {{#if errorMessage }}
+  <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+
+  <button class="button">Log in</button>
+  <br>
+  <p class="account-message">
+    Don't have an account? <a href="/professional-signup">Sign up</a>
+  </p>
+
+</form>

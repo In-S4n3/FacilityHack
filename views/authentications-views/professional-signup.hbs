@@ -1,0 +1,35 @@
+<div class="h2-stylings">
+  <h2>Professional Sign Up Page</h2>
+</div>
+
+<form id="form" action="/professional-signup" method="POST">
+  <input type="text" class="form-control" name="companyName" placeholder="Your Company Name">
+  <br>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+    placeholder="Email">
+  <br>
+
+  <input type="text" class="form-control" name="nif" placeholder="Company NIF">
+  <br>
+
+  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password"
+    placeholder="********">
+  <br>
+
+  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password2"
+    placeholder="********">
+
+
+
+  {{#if errorMessage}}
+  <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+  <br>
+  <button class="button" type="submit">Create Account</button>
+</form>
+
+<br>
+
+<div class="login-text">
+  <h2>Already a member? <a href="/login">Login</a> instead</h2>
+</div>

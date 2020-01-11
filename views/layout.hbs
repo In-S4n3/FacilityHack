@@ -18,7 +18,7 @@
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
 
-    {{#if user}}
+    {{#ifCond user '||' professional}}
 
     <div class="login-container">
       <form action="/logout">
@@ -40,7 +40,7 @@
       </form>
     </div>
 
-    {{/if}}
+    {{/ifCond}}
 
     <div class="login-container login">
       {{#if user}}
@@ -48,11 +48,17 @@
       {{/if}}
     </div>
 
-  </div>
+    <div class="login-container login">
+      {{#if professional}}
+      Welcome, {{professional.companyName}}
+      {{/if}}
+    </div>
 
+  </div>
 
   {{{body}}}
 
+<<<<<<< HEAD
   
   <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
@@ -160,6 +166,8 @@
 </footer>
 <!-- Footer -->
 
+=======
+>>>>>>> c6e92da001e96a4896a83c1aac2a25c4fe14d1db
   <script src="/javascripts/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

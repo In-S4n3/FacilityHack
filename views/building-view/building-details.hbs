@@ -22,6 +22,7 @@
 <div class="h2-stylings">
   <h3>{{building.name}}</h3>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -55,8 +56,10 @@
         <form action="/buildings/{{building._id}}/issues/add" method="post">
           <h4>Insert an Issue</h4>
           <br>
-          <label>Username:</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName">
+          <label>Resident:</label>
+          <br>
+          <label for=""><h6>{{user.firstName}} {{user.lastName}}</h6></label>
+          <br>
           <br>
           <label for="">Floor:</label>
           <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor">
@@ -81,7 +84,6 @@
           <button class="button" type="submit">ADD</button>
         </form>
       </div>
-
     </div>
   </div>
 
@@ -90,32 +92,42 @@
   <h4>Building Issues</h4>
   <br>
   {{#each issue}}
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <p><b>User:</b><br>{{this.userName}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Floor:</b><br>{{this.floor}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Appartment:</b><br>{{this.apartment}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Commentary:</b><br>{{this.comment}}</p>
+  <form action="">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <p><b>Resident:</b><br>{{this.userName}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Floor:</b><br>{{this.floor}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Appartment:</b><br>{{this.apartment}}</p>
+        </div>
+        <div class="col-sm">
+          <p><b>Commentary:</b><br>{{this.comment}}</p>
+        </div>
+        {{#if ../user}}
+          <a class="button-1" href="/issues/edit?issue_id={{this._id}}">Edit</a>
+        {{else}}
+          <a class="button-1" href="/issues/solution?issue_id={{this._id}}">Present a solution</a>
+        {{/if}}
       </div>
     </div>
-  </div>
-  <hr>
+    <hr>
+  </form>
   {{/each}}
-</div>
-<br>
 
+<<<<<<< HEAD
 <br>
 <a href="/buildings">Return to Building list</a class="button">
 </div>
 
 </div>
+=======
+  <a href="/buildings">Return to Building list</a class="button">
+</div>
+>>>>>>> c6e92da001e96a4896a83c1aac2a25c4fe14d1db

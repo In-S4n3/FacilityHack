@@ -1,6 +1,10 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
   background-color: #F4F4F5}
+=======
+  background-image: url("/images/frenchstucco_@2X.png"); }
+>>>>>>> c6e92da001e96a4896a83c1aac2a25c4fe14d1db
 
 a {
   color: #00B7FF; }
