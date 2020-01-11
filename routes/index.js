@@ -13,8 +13,10 @@ const Issue = require("../models/issue.js");
 /* GET home page */
 router.get("/", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   res.render("index", {
-    user
+    user,
+    professional
   });
 });
 
@@ -42,12 +44,14 @@ router.get("/buildings/search", (req, res, next) => {
 // LISTA DE EDIFICIOS
 router.get("/buildings", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   Building.find()
     .then(allTheBuildingsFromTheList => {
       //console.log(allTheBuildingsFromTheList);
       res.render("building-view/building-list", {
         building: allTheBuildingsFromTheList,
-        user
+        user,
+        professional
       });
     })
     .catch(error => {
@@ -60,12 +64,14 @@ router.get("/buildings", (req, res, next) => {
 // LISTA DE EMPRESAS
 router.get("/companies", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   Company.find()
     .then(allTheCompaniesFromTheList => {
       //console.log(allTheCompaniesFromTheList);
       res.render("company-view/company-list", {
         company: allTheCompaniesFromTheList,
-        user
+        user,
+        professional
       });
     })
     .catch(error => {
@@ -78,8 +84,10 @@ router.get("/companies", (req, res, next) => {
 //ADICIONAR EDIFICIOS
 router.get("/buildings/add", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   res.render("building-view/building-add", {
-    user
+    user,
+    professional
   });
 });
 
@@ -121,8 +129,10 @@ router.post("/buildings/add", uploadCloud.single("photo"), (req, res, next) => {
 // ADICIONAR EMPRESAS
 router.get("/companies/add", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   res.render("company-view/company-add", {
-    user
+    user,
+    professional
   });
 });
 
@@ -160,6 +170,7 @@ router.post("/companies/add", uploadCloud.single("photo"), (req, res, next) => {
 //EDITAR EDIFICIOS
 router.get("/buildings/edit", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   //console.log(req.query.building_id);
   Building.findOne({
       _id: req.query.building_id
@@ -167,7 +178,8 @@ router.get("/buildings/edit", (req, res, next) => {
     .then(building => {
       res.render("building-view/building-edit", {
         building,
-        user
+        user,
+        professional
       });
     })
     .catch(error => {
@@ -221,6 +233,7 @@ router.post(
 // EDITAR EMPRESAS
 router.get("/companies/edit", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   //console.log(req.query.company_id);
   Company.findOne({
       _id: req.query.company_id
@@ -228,7 +241,8 @@ router.get("/companies/edit", (req, res, next) => {
     .then(company => {
       res.render("company-view/company-edit", {
         company,
-        user
+        user,
+        professional
       });
     })
     .catch(error => {
@@ -302,8 +316,10 @@ router.get("/about", (req, res, next) => {
 //CONTACT ROUTE
 router.get("/contact", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   res.render("contact", {
-    user
+    user,
+    professional
   });
 });
 
@@ -312,6 +328,9 @@ router.get("/contact", (req, res, next) => {
 // DETALHES DOS EDIFICIOS E ANOMALIAS
 router.get("/buildings/:buildingId", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
+  console.log("user", user);
+  console.log("professional", professional);
   Building.findById(req.params.buildingId)
     .then(theBuilding => {
       Issue.find({
@@ -321,7 +340,8 @@ router.get("/buildings/:buildingId", (req, res, next) => {
         res.render("building-view/building-details", {
           building: theBuilding,
           issue: allTheIssuesFromTheList,
-          user
+          user,
+          professional
         });
       });
     })
@@ -364,10 +384,10 @@ router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
 //ROUTE PARA EDITAR ANOMALIAS
 router.get("/issues/edit", (req, res, next) => {
   let user = req.session.currentUser;
-  console.log(req.query.issue_id);
+  let professional = req.session.currentProfessional;
   Issue.findOne({ _id: req.query.issue_id })
     .then(issue => {
-      res.render("issue-view/issue-edit", { issue, user });
+      res.render("issue-view/issue-edit", { issue, user, professional });
     })
     .catch(error => {
       console.log(error);
@@ -375,7 +395,6 @@ router.get("/issues/edit", (req, res, next) => {
 });
 
 router.post("/issues/edit", (req, res, next) => {
-  let buildingId = req.params.buildingId;
     const {
       userName,
       floor,
@@ -387,7 +406,6 @@ router.post("/issues/edit", (req, res, next) => {
       { _id: req.query.issue_id },
       {
         $set: {
-          building: buildingId,
           userName,
           floor,
           apartment,
@@ -398,7 +416,52 @@ router.post("/issues/edit", (req, res, next) => {
       { new: true }
     )
       .then(issue => {
-        res.redirect("/buildings-details");
+        res.redirect("/buildings");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+);
+
+//===================================================================================
+
+//ROUTE PARA SOLUÇÃO DO PROFESSIONAL
+router.get("/issues/solution", (req, res, next) => {
+  let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
+  Issue.findOne({ _id: req.query.issue_id })
+    .then(issue => {
+      res.render("solution", { issue, user, professional });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
+router.post("/issues/soluction", (req, res, next) => {
+    const {
+      userName,
+      floor,
+      apartment,
+      issueType,
+      comment
+    } = req.body;
+    Issue.update(
+      { _id: req.query.issue_id },
+      {
+        $set: {
+          userName,
+          floor,
+          apartment,
+          issueType,
+          comment
+        }
+      },
+      { new: true }
+    )
+      .then(issue => {
+        res.redirect("/buildings");
       })
       .catch(error => {
         console.log(error);

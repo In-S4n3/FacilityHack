@@ -32,6 +32,12 @@
       <p class="card-text">You have a problem? Find a companie to help you!</p>
       <div id="container-for-buttons">
         {{#if user}}
+        <a href="/companies" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
+          class="buttons-index">Consult Companies</a>
+        {{/if}}
+      </div>
+       <div id="container-for-buttons">
+        {{#if professional}}
         <a href="/companies/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
           class="buttons-index">Add Company</a>
 
@@ -50,8 +56,14 @@
       <p class="card-text">Report the pathologies of your building, we will help you fix it without you even have to leave your confort</p>
     </div>
     <div id="container-for-buttons">
-
       {{#if user}}
+      <a href="/buildings" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
+        class="buttons-index">Consult
+        Buildings</a>
+      {{/if}}
+    </div>
+    <div id="container-for-buttons">
+      {{#if professional}}
       <a href="/buildings/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
         class="buttons-index">Add Building</a>
 
@@ -72,7 +84,7 @@
       <div class="card-body">
         <h5 class="card-title">For Profissionals</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/login" class="btn btn-primary">Go somewhere</a>
+        <a href="/professional-login" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>

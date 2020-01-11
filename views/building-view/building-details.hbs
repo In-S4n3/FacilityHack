@@ -35,8 +35,10 @@
         <form action="/buildings/{{building._id}}/issues/add" method="post">
           <h4>Insert an Issue</h4>
           <br>
-          <label>Username:</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName">
+          <label>Resident:</label>
+          <br>
+          <label for=""><h6>{{user.firstName}} {{user.lastName}}</h6></label>
+          <br>
           <br>
           <label for="">Floor:</label>
           <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor">
@@ -73,7 +75,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <p><b>User:</b><br>{{this.userName}}</p>
+          <p><b>Resident:</b><br>{{user.firstName}} {{user.lastName}}</p>
         </div>
         <div class="col-sm">
           <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
@@ -87,12 +89,16 @@
         <div class="col-sm">
           <p><b>Commentary:</b><br>{{this.comment}}</p>
         </div>
-        <a class="button-1" href="/issues/edit?issue_id={{this._id}}">Edit</a>
+        {{#if ../user}}
+          <a class="button-1" href="/issues/edit?issue_id={{this._id}}">Edit</a>
+        {{else}}
+          <a class="button-1" href="/issues/solution?issue_id={{this._id}}">Present a solution</a>
+        {{/if}}
       </div>
     </div>
     <hr>
   </form>
-
   {{/each}}
+
   <a href="/buildings">Return to Building list</a class="button">
 </div>

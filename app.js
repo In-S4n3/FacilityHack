@@ -12,6 +12,34 @@ const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
 
+// HBS REGISTER HELPERS
+hbs.registerHelper('ifCond', function (v1, operator, v2, options) {
+  switch (operator) {
+      case '==':
+          return (v1 == v2) ? options.fn(this) : options.inverse(this);
+      case '===':
+          return (v1 === v2) ? options.fn(this) : options.inverse(this);
+      case '!=':
+          return (v1 != v2) ? options.fn(this) : options.inverse(this);
+      case '!==':
+          return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+      case '<':
+          return (v1 < v2) ? options.fn(this) : options.inverse(this);
+      case '<=':
+          return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+      case '>':
+          return (v1 > v2) ? options.fn(this) : options.inverse(this);
+      case '>=':
+          return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+      case '&&':
+          return (v1 && v2) ? options.fn(this) : options.inverse(this);
+      case '||':
+          return (v1 || v2) ? options.fn(this) : options.inverse(this);
+      default:
+          return options.inverse(this);
+  }
+});
+
 mongoose
   .connect('mongodb://heroku_wxq4tvrz:lunajqr1s7ftd27hqirs5m26p3@ds035016.mlab.com:35016/heroku_wxq4tvrz', {useNewUrlParser: true})
   .then(x => {

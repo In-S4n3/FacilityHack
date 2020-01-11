@@ -18,7 +18,7 @@
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
 
-    {{#if user}}
+    {{#ifCond user '||' professional}}
 
     <div class="login-container">
       <form action="/logout">
@@ -40,7 +40,7 @@
       </form>
     </div>
 
-    {{/if}}
+    {{/ifCond}}
 
     <div class="login-container login">
       {{#if user}}
@@ -48,8 +48,13 @@
       {{/if}}
     </div>
 
-  </div>
+    <div class="login-container login">
+      {{#if professional}}
+      Welcome, {{professional.companyName}}
+      {{/if}}
+    </div>
 
+  </div>
 
   {{{body}}}
 

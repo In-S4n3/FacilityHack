@@ -2,19 +2,19 @@
   <h2>Edit a Issue</h2>
 </div>
 
-<form action="/issues/edit?issue_id={{this._id}}" method="post">
+<form action="/issues/edit?issue_id={{issue._id}}" method="post">
   <br>
   <label>Username:</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName" value="{{this.userName}}">
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName" value="{{issue.userName}}">
   <br>
   <label for="">Floor:</label>
-  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor" value="{{this.floor}}">
+  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor" value="{{issue.floor}}">
   <br>
   <label for="">Apartment:</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apartment" value="{{this.apartment}}">
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apartment" value="{{issue.apartment}}">
   <br>
   <label for="">Type of issue:</label>
-  <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType" value="{{this.issueType}}">
+  <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType" value="{{issue.issueType}}">
     <option value="Cleaning">Cleaning</option>
     <option value="Cracks">Cracks</option>
     <option value="Elevators">Elevators</option>
@@ -25,7 +25,9 @@
   </select>
   <br>
   <label for="">Commentary:</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="comment" value="{{this.comment}}">
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="comment" value="{{issue.comment}}">
   <br>
   <input class="button" type="submit" value="Edit">
 </form>
+<br>
+<a href="/buildings">Return to Building list</a class="button">
