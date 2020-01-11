@@ -439,7 +439,7 @@ router.get("/issues/solution", (req, res, next) => {
     });
 });
 
-router.post("/issues/soluction", (req, res, next) => {
+router.post("/issues/soluction", uploadCloud.single("photo"), (req, res, next) => {
     const {
       userName,
       floor,
@@ -447,6 +447,8 @@ router.post("/issues/soluction", (req, res, next) => {
       issueType,
       comment
     } = req.body;
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
     Issue.update(
       { _id: req.query.issue_id },
       {
@@ -455,7 +457,9 @@ router.post("/issues/soluction", (req, res, next) => {
           floor,
           apartment,
           issueType,
-          comment
+          comment,
+          imgPath,
+          imgName
         }
       },
       { new: true }
