@@ -1,7 +1,6 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /*background-image: url("/images/frenchstucco_@2X.png");*/ }
+  background-color: #F4F4F5}
 
 a {
   color: #00B7FF; }
@@ -133,3 +132,37 @@ a {
   color: #357cf0; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Bottom Margins */
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+/* Bottom Margins */
+.padtop-100 {
+  padding-top: 100px;
+}
+
+#login {
+
+}
+
+#login_signup .topnav{ 
+  display: none; 
+  }
+
+  #login_signup .page-footer{ 
+    display: none; 
+    }

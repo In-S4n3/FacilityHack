@@ -58,7 +58,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'FacilityHack - Building Managment';
+app.locals.title = 'FacilityHack';
 
 
 
