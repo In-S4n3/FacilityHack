@@ -1,7 +1,6 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("/images/frenchstucco_@2X.png");
+  background-color: #F4F4F5;
 }
 
 a {
@@ -162,4 +161,80 @@ a {
   color: #357cf0;
 }
 
-//SEARCH BAR
+// HIDE NAVIGATION AND FOOTER
+#login_signup .nav-footer {
+  display: none;
+}
+
+#building_details .page-footer {
+  display: none;
+}
+
+// BOTTOM MARGINS BETWEEN ELEMETS
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+// TOP PADDING BETWEEN ELEMETS
+.mt-50 {
+  margin-top: 50px;
+}
+
+.padtop-100 {
+  padding-top: 100px;
+}
+
+
+
+//-- BUILDING PAGE DETAILS SIDEBAR ==================================================
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 230px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 30px; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 220px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

@@ -1,10 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-<<<<<<< HEAD
-  background-color: #F4F4F5}
-=======
-  background-image: url("/images/frenchstucco_@2X.png"); }
->>>>>>> c6e92da001e96a4896a83c1aac2a25c4fe14d1db
+  background-color: #F4F4F5; }
 
 a {
   color: #00B7FF; }
@@ -135,38 +131,72 @@ a {
   padding: 17px 10px 0 0;
   color: #357cf0; }
 
-/*# sourceMappingURL=style.css.map */
+#login_signup .nav-footer {
+  display: none; }
 
-/* Bottom Margins */
+#building_details .page-footer {
+  display: none; }
+
 .mb-100 {
-  margin-bottom: 100px;
-}
+  margin-bottom: 100px; }
 
 .mb-50 {
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px; }
 
 .mb-25 {
-  margin-bottom: 25px;
-}
+  margin-bottom: 25px; }
 
 .mb-12 {
-  margin-bottom: 12px;
-}
+  margin-bottom: 12px; }
 
-/* Bottom Margins */
+.mt-50 {
+  margin-top: 50px; }
+
 .padtop-100 {
-  padding-top: 100px;
-}
+  padding-top: 100px; }
 
-#login {
+/* The sidebar menu */
+.sidenav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 230px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 30px;
+  /* Stay at the top */
+  left: 0;
+  background-color: #ffffff;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 20px; }
 
-}
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block; }
 
-#login_signup .topnav{ 
-  display: none; 
-  }
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1; }
 
-  #login_signup .page-footer{ 
-    display: none; 
-    }
+/* Style page content */
+.main {
+  margin-left: 220px;
+  /* Same as the width of the sidebar */
+  padding: 0px 10px; }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+  .sidenav a {
+    font-size: 18px; } }
+
+/*# sourceMappingURL=style.css.map */

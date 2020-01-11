@@ -1,3 +1,40 @@
+<!-- SEARCH ================================================== -->
+
+    <section class="py-6 mb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+          <!-- Heading -->
+            <h4 class="lead text-center text-md-center text-muted mb-6 mb-lg-8 mb-25">
+              Find your building and start engaging now!
+            </h4>
+
+          <!-- Search form -->
+            <form class="rounded shadow md-form mr-auto mb-4" action="/buildings/search" method="GET">
+              <div class="input-group input-group-lg">
+
+                <!-- Input -->
+                <input class="form-control border-0 px-1" type="text" placeholder="Find your Building here" name="name" aria-label="Search" value="Edifício Sol">
+                
+                <!-- Append -->
+                <div class="input-group-append">
+                  <span class="input-group-text border-0 py-0 pl-1 pr-3">
+
+                <!-- Button -->
+                <button class="btn btn-sm btn-primary" type="submit">
+                  Search
+                </button>
+
+                </div>
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+    </section>
+
 <br>
 
 <form class="form-inline md-form mr-auto mb-4 h2-stylings" action="/buildings/search" method="GET">
@@ -5,6 +42,11 @@
         aria-label="Search">
     <button class="button-search btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
 </form>
+
+
+
+
+<!-- BUILDING LIST ================================================== -->
 
 
 <div class="container">
@@ -36,3 +78,6 @@
     </div>
     <a href="/">Retun to main page</a>
 </div>
+
+
+
