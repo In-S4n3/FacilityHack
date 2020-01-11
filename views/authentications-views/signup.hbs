@@ -1,8 +1,29 @@
-<div class="h2-stylings">
-  <h2>Sign Up Page</h2>
-</div>
+<body id="login_signup">
+  
+<!-- CONTENT ================================================== -->
+    <section class="section-border border-primary">
+      <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center no-gutters min-vh-100">
+          <div class="col-8 col-md-6 col-lg-7 offset-md-1 order-md-2 mt-auto mt-md-0 pt-8 pb-4 py-md-11">
 
-<form id="form" action="/signup" method="POST">
+            <!-- Image -->
+            <img src="https://previews.dropbox.com/p/thumb/AAoD0RFILRn8V86imxVtscURiC6cfxuUqtJQSZLR3KfP_wbNMuClxKB8BXCoQB5Oc8PCBTMjx-Z5BLKE97fkSZYXExYlIVlxlPHtiVIwSajz63PSR5QF-2o_5KY4teD1HG1TQoA0JfqvhP1LnbvxIW5W8rzRlPqwJDdg298W6cidcalK0zvAmiXR5vGgAPsAdyDY69tSGA3oqEOy068j5eFBwbzUkQvxFouUNuOnrXb1OE6T3cjR811iohRwp2EGUYbaebtWwowFqQeLO8Rux9cDtU5Xs_botVwtpfiiE7k1pKwujOCSXojZpKTL5GnHRux3VlZj1TtZvZZ_KHfWW9OQ/p.png?fv_content=true&size_mode=5" alt="..." class="img-fluid">
+
+          </div>
+          <div class="col-12 col-md-5 col-lg-4 order-md-1 mb-auto mb-md-0 pb-8 py-md-11">
+            
+            <!-- Heading -->
+            <h1 class="mb-0 font-weight-bold text-center">
+              Sign up
+            </h1>
+
+            <!-- Text -->
+            <p class="mb-6 text-center text-muted">
+              And start engaging with your building.
+            </p>
+
+<!-- Form -->
+<form id="form" action="/signup" method="POST" class="mb-6">
   <div class="row">
     <div class="col">
       <input type="text" class="form-control" name="firstName" placeholder="First name">
@@ -32,11 +53,21 @@
   <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
   <br>
-  <button class="button" type="submit">Create Account</button>
+
+  <!-- Submit -->
+  <button class="button btn btn-block btn-primary mb-12" type="submit">Create Account</button>
 </form>
 
-<br>
 
-<div class="login-text">
-  <h2>Already a member? <a href="/login">Login</a> instead</h2>
-</div>
+<!-- Text -->
+<p class="mb-0 font-size-sm text-center text-muted">
+  Already a member? <a href="/login">Login</a> instead.
+</p>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+
+</body>
