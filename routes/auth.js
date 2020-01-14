@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 // CHAMAR O SCHEMA DO USER
 const User = require("../models/user");
 const Professional = require("../models/professional")
@@ -50,7 +51,7 @@ router.post("/signup", (req, res, next) => {
         password: hashPass
       })
         .then(() => {
-          res.redirect("/");
+          res.redirect("/login");
         })
         .catch(error => {
           console.log(error);
@@ -148,7 +149,7 @@ router.post("/login", (req, res, next) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.redirect("/");
+        res.redirect("/console");
       } else {
         res.render("authentications-views/login", {
           errorMessage: "Incorrect password"

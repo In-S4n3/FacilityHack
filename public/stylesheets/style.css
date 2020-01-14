@@ -137,6 +137,9 @@ a {
 #building_details .page-footer {
   display: none; }
 
+#console .page-footer {
+  display: none; }
+
 .mb-100 {
   margin-bottom: 100px; }
 

@@ -1,6 +1,9 @@
+<body id="building-list" class="padtop-100">
+
+
 <!-- SEARCH ================================================== -->
 
-    <section class="py-6 mb-100">
+    <section class="py-6 mb-50">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -45,14 +48,13 @@
 
 
 
-
 <!-- BUILDING LIST ================================================== -->
-
 
 <div class="container">
     <div class="h2-stylings">
         <h2>Building List</h2>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -76,8 +78,47 @@
 
         </div>
     </div>
+
     <a href="/">Retun to main page</a>
 </div>
 
+</body>
 
+<br>
 
+<!-- CONTENT ================================================== -->
+    <section class="py-8 py-md-11 mt-n10 mt-md-n14">
+      <div class="container">
+        <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
+          
+          {{#each building}}
+          <div class="col-12 col-md-4 product">
+
+            <!-- Card -->
+            <a class="card card-flush mb-7" href="#!">
+
+              <!-- Image -->
+              <div class="card-zoom">
+                <img class="card-img-top rounded shadow-light-lg" src="{{this.imgPath}}" alt="...">
+              </div>
+
+              <!-- Footer -->
+              <div class="card-footer">
+
+                <!-- Preheading -->
+                <h7 class="text-uppercase mb-1 text-muted">{{this.address}}</h7>
+
+                <!-- Heading -->
+                <h4 class="mb-0">{{this.name}}</h4>
+
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+        {{/each}}
+
+      </div>
+    </section>

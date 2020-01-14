@@ -14,9 +14,17 @@
 <body>
 
   <div class="topnav fixed-top nav-footer">
-    <a class="active" href="/">FacilityHack</a>
+    
+    {{#ifCond user '||' professional}}
+      <a class="active" href="/console">FacilityHack</a>
+    {{else}}
+      <a class="active" href="/">FacilityHack</a>
+    {{/ifCond}}
+    
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    <a href="/buildings">Buildings</a>
+    <a href="/companies">Companies</a>
 
     {{#ifCond user '||' professional}}
 
@@ -56,11 +64,13 @@
 
   </div>
 
+
   {{{body}}}
+
 
   
   <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark nav-footer">
+<footer class="page-footer font-small unique-color-dark nav-footer bg-secondary padtop-100">
 
       </div>
       <!-- Grid row-->

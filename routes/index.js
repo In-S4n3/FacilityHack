@@ -469,6 +469,7 @@ router.post("/issues/soluction", (req, res, next) => {
   }
 );
 
+
 //===================================================================================
 
 // DETALHES DAS EMPRESAS
@@ -485,5 +486,19 @@ router.get("/companies/:companyId", (req, res, next) => {
       console.log("Error while retrieving company details: ", error);
     });
 });
+
+
+//===================================================================================
+
+//USER CONSOLE
+router.get("/console", (req, res, next) => {
+  let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
+  res.render("authentications-views/user-console", {
+    user,
+    professional
+  });
+});
+
 
 module.exports = router;
