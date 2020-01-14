@@ -5,6 +5,7 @@ const Schema   = mongoose.Schema;
 const issueSchema = new Schema({
   building: { type : Schema.Types.ObjectId, ref: 'building' },
   userName: String,
+  email: String,
   floor: Number,
   apartment: String,
   issueType: { type: String, enum: ['Cleaning', 'Cracks', 'Elevators', 'Inflitrations', 'Smoke', 'TV Signal', 'Home Appliances', 'Others'] },

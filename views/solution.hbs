@@ -10,6 +10,9 @@
         <p><b>User:</b><br><br>{{issue.userName}}</p>
       </div>
       <div class="col-sm">
+        <p><b>User Email:</b><br><br>{{issue.email}}</p>
+      </div>
+      <div class="col-sm">
         <p><b>Type of Issue:</b><br><br>{{issue.issueType}}</p>
       </div>
       <div class="col-sm">
@@ -25,8 +28,14 @@
   </div>
 </form>
 <br>
-<label>Add your Solution</label>
-<br>
-<input type="file" name="photo">
-<br>
-<input class="button" type="submit" value="SEND">
+
+
+<form action="/send-email" method="post">
+  <label for="">Email</label>
+  <input type="email" name="email" id="">
+  <label for="">Subject</label>
+  <input type="text" name="subject" id="">
+  <label for="">Message</label>
+  <textarea type="text" name="message" id=""></textarea>
+  <button type="submit">Submit</button>
+</form>

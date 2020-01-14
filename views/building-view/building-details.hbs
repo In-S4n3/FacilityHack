@@ -59,17 +59,26 @@
         <form action="/buildings/{{building._id}}/issues/add" method="post">
           <h4>Insert an Issue</h4>
           <br>
+          {{#if user}}
           <label>Resident:</label>
           <br>
           <label for=""><h6>{{user.firstName}} {{user.lastName}}</h6></label>
           <br>
+          {{else}}
+          <label>Company:</label>
+          <br>
+          <label for=""><h6>{{professional.companyName}}</h6></label>
+          <br>
+          {{/if}}
           <br>
           <label for="">Floor:</label>
           <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor">
           <br>
+          {{#if user}}
           <label for="">Apartment:</label>
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apartment">
           <br>
+          {{/if}}
           <label for="">Type of issue:</label>
           <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType">
             <option value="Cleaning">Cleaning</option>
@@ -101,6 +110,11 @@
         <div class="col-sm">
           <p><b>Resident:</b><br>{{this.userName}}</p>
         </div>
+        {{#if ../professional}}
+        <div class="col-sm">
+          <p><b>Email:</b><br>{{this.email}}</p>
+        </div>
+        {{/if}}
         <div class="col-sm">
           <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
         </div>
@@ -115,6 +129,9 @@
         </div>
         {{#if ../user}}
           <a class="button-1" href="/issues/edit?issue_id={{this._id}}">Edit</a>
+          <form action="" method="POST">
+          <button class="button-1" type="submit">Delete</button>
+          </form>
         {{else}}
           <a class="button-1" href="/issues/solution?issue_id={{this._id}}">Present a solution</a>
         {{/if}}

@@ -4,8 +4,11 @@
 
 <form action="/issues/edit?issue_id={{issue._id}}" method="post">
   <br>
-  <label>Username:</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName" value="{{issue.userName}}">
+  <label>Resident:</label>
+  <br>
+  <br>
+  <label>{{issue.userName}}</label>
+  <br>
   <br>
   <label for="">Floor:</label>
   <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor" value="{{issue.floor}}">
