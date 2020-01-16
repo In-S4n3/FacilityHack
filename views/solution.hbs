@@ -31,11 +31,20 @@
 
 
 <form action="/send-email" method="post">
-  <label for="">Email</label>
-  <input type="email" name="email" id="">
-  <label for="">Subject</label>
-  <input type="text" name="subject" id="">
-  <label for="">Message</label>
-  <textarea type="text" name="message" id=""></textarea>
+  <div class="form-group">
+    <label for="">Email</label>
+    <input class="form-control" type="email" name="email" id="">
+  </div>
+  <div class="form-group">
+    <label for="">Subject</label>
+    <input class="form-control" type="text" name="subject" id="">
+  </div>
+  <div class="form-group">
+    <label for="">Message</label>
+    <textarea class="form-control" type="text" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
   <button type="submit">Submit</button>
 </form>
