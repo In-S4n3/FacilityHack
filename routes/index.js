@@ -302,8 +302,8 @@ router.post("/buildings/:buildingId/delete", (req, res) => {
 
 // ISSUES DELETE ROUTE
 router.post("/issues/:issueId/delete", (req, res) => {
-  console.log("preparing to delete", req.params.issueId);
-  Building.findByIdAndRemove(req.params.buildingId)
+  // console.log("preparing to delete", req.params.issueId);
+  Building.findByIdAndRemove({_id: req.params.issueId})
     .then(() => {
       res.redirect("/buildings");
     })
