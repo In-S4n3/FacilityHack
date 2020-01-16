@@ -30,7 +30,7 @@
 <br>
 
 
-<form action="/send-email" method="post">
+<form action="/send-email" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="">Email</label>
     <input class="form-control" type="email" name="email" id="">
@@ -44,7 +44,7 @@
     <textarea class="form-control" type="text" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <div class="form-group">
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
   </div>
   <button type="submit">Submit</button>
 </form>

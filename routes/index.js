@@ -491,8 +491,8 @@ router.post("/issues/soluction", (req, res, next) => {
 //===================================================================================
 
 // ROUTE TO SEND EMAILS
-router.post('/send-email', (req, res, next) => {
-  let { email, subject, message } = req.body;
+router.post('/send-email', uploadCloud.single("file"), (req, res, next) => {
+  let { email, subject, message } = req.body; 
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -507,7 +507,7 @@ router.post('/send-email', (req, res, next) => {
     subject: subject, 
     text: message,
     attachments: [{
-      path: 'file'
+      path: req.file.url
     }],
     html: `<b>${message}</b>`
   })
