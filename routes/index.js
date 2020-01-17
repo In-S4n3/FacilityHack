@@ -4,11 +4,8 @@ const router = express.Router();
 const Building = require("../models/building.js");
 const Company = require("../models/company.js");
 const Issue = require("../models/issue.js");
+const nodemailer = require('nodemailer');
 
-// router.use((req, res, next) => {
-//   res.locals.user = req.session.currentUser
-//   next();
-// });
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -303,6 +300,20 @@ router.post("/buildings/:buildingId/delete", (req, res) => {
 
 //===================================================================================
 
+// ISSUES DELETE ROUTE
+router.post("/issues/:issueId/delete", (req, res) => {
+  console.log("preparing to delete", req.params.issueId);
+  Building.findByIdAndRemove(req.params.buildingId)
+    .then(() => {
+      res.redirect("/buildings");
+    })
+    .catch(error => {
+      console.log("Error while retrieving book details: ", error);
+    });
+});
+
+//===================================================================================
+
 //ABOUT ROUTE
 router.get("/about", (req, res, next) => {
   let user = req.session.currentUser;
@@ -329,8 +340,6 @@ router.get("/contact", (req, res, next) => {
 router.get("/buildings/:buildingId", (req, res, next) => {
   let user = req.session.currentUser;
   let professional = req.session.currentProfessional;
-  console.log("user", user);
-  console.log("professional", professional);
   Building.findById(req.params.buildingId)
     .then(theBuilding => {
       Issue.find({
@@ -352,9 +361,18 @@ router.get("/buildings/:buildingId", (req, res, next) => {
 
 // ROUTE PARA ADICIONAR ANOMALIAS
 router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
+  console.log('current user' , req.session);
+  let currentUsername
+  let userEmail
+  if (req.session.currentUser) {
+    currentUsername = `${req.session.currentUser.firstName} ${req.session.currentUser.lastName}`
+    userEmail = req.session.currentUser.email;
+  } 
+  if (req.session.currentProfessional) {
+    currentUsername = req.session.currentProfessional.companyName;
+    userEmail = req.session.currentProfessional.email;
+  }
   let buildingId = req.params.buildingId;
-  console.log("buildingid", buildingId);
-  let currentUsername = `${req.session.currentUser.firstName} ${req.session.currentUser.lastName}`
   const {
     floor,
     apartment,
@@ -364,6 +382,7 @@ router.post("/buildings/:buildingId/issues/add", (req, res, next) => {
   const newIssue = new Issue({
     building: buildingId,
     userName: currentUsername,
+    email: userEmail,
     floor,
     apartment,
     issueType,
@@ -469,6 +488,33 @@ router.post("/issues/soluction", (req, res, next) => {
   }
 );
 
+
+//===================================================================================
+
+// ROUTE TO SEND EMAILS
+router.post('/send-email', (req, res, next) => {
+  let { email, subject, message } = req.body;
+
+  let transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
+    }
+  });
+  
+  transporter.sendMail({
+    from: 'FacilityHack',
+    to: email, 
+    subject: subject, 
+    text: message,
+    html: `<b>${message}</b>`
+  })
+  .then(info => {
+    res.render('message', {email, subject, message, info})
+  })
+  .catch(error => console.log(error));
+});
 
 //===================================================================================
 
