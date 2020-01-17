@@ -302,8 +302,8 @@ router.post("/buildings/:buildingId/delete", (req, res) => {
 
 // ISSUES DELETE ROUTE
 router.post("/issues/:issueId/delete", (req, res) => {
-  console.log("preparing to delete", req.params.issueId);
-  Building.findByIdAndRemove(req.params.buildingId)
+  // console.log("preparing to delete", req.params.issueId);
+  Building.findByIdAndRemove({_id: req.params.issueId})
     .then(() => {
       res.redirect("/buildings");
     })
@@ -492,9 +492,8 @@ router.post("/issues/soluction", (req, res, next) => {
 //===================================================================================
 
 // ROUTE TO SEND EMAILS
-router.post('/send-email', (req, res, next) => {
-  let { email, subject, message } = req.body;
-
+router.post('/send-email', uploadCloud.single("file"), (req, res, next) => {
+  let { email, subject, message } = req.body; 
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -508,6 +507,9 @@ router.post('/send-email', (req, res, next) => {
     to: email, 
     subject: subject, 
     text: message,
+    attachments: [{
+      path: req.file.url
+    }],
     html: `<b>${message}</b>`
   })
   .then(info => {
