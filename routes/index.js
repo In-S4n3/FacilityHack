@@ -497,8 +497,8 @@ router.post('/send-email', uploadCloud.single("file"), (req, res, next) => {
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD
+      user: 'facilityhack@gmail.com',
+      pass: 'facilityhack123456'
     }
   });
   
