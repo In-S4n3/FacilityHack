@@ -523,11 +523,13 @@ router.post('/send-email', uploadCloud.single("file"), (req, res, next) => {
 // DETALHES DAS EMPRESAS
 router.get("/companies/:companyId", (req, res, next) => {
   let user = req.session.currentUser;
+  let professional = req.session.currentProfessional;
   Company.findById(req.params.companyId)
     .then(theCompany => {
       res.render("company-view/company-details", {
         company: theCompany,
-        user
+        user,
+        professional
       });
     })
     .catch(error => {

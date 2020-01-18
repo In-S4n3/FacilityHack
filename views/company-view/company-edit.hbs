@@ -2,7 +2,7 @@
   <h2>Edit your Company</h2>
 </div>
 
-<div class="form-group ">
+{{!-- <div class="form-group ">
   <form action="/companies/edit?company_id={{company._id}}" method="POST" enctype="multipart/form-data">
     <label>Company Name:</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
@@ -30,4 +30,130 @@
     <br>
     <input class="button" type="submit" value="Edit">
   </form>
-</div>
+</div> --}}
+
+<body class="padtop-100">
+
+  <!-- FORM ================================================== -->
+
+  <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Card -->
+          <div class="card card-border shadow-light-lg border border-white">
+            <div class="card-body">
+
+              <!-- Form -->
+              <form action="/companies/edit?company_id={{company._id}}" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+
+                    <div class="form-group mb-5">
+                      <label for="applyName">
+                        Company Name
+                      </label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="name" value="{{company.name}}">
+                    </div>
+
+                  </div>
+                  <div class="col-12 col-md-6">
+
+                    <div class="form-group mb-5">
+                      <label for="applyEmail">
+                        Company NIF
+                      </label>
+                      <input type="number" class="form-control" id="applyEmail" name="companyNif"
+                        value="{{company.companyNif}}">
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="form-group mb-5">
+                      <label for="applyMessage">
+                        Company Address
+                      </label>
+                      <input type="text" class="form-control" id="applyEmail" name="address"
+                        value="{{company.address}}">
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="form-group mb-5">
+                      <label for="applyMessage">
+                        Type of Service
+                      </label>
+                      <input type="text" class="form-control" id="applyEmail" name="typeOfServices"
+                        value="{{company.typeOfServices}}">
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="form-group mb-5">
+                      <label for="applyMessage">
+                        Years of Activity
+                      </label>
+                      <input type="number" class="form-control" id="applyEmail" name="yearsOfactivity"
+                        value="{{company.yearsOfactivity}}">
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="form-group mb-5">
+                      <p class="mb-2">
+                        Company Logo
+                      </p>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="applyCover" name="photo">
+                        <label class="custom-file-label" for="applyCover">
+                          Choose photo
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+                <div class="row align-items-center">
+                  <div class="col-12 col-md">
+
+                    <!-- Submit -->
+                    <button class="btn btn-primary mb-6 mb-md-0 lift" type="submit" value="Edit">
+                      Edit Company
+                    </button>
+
+                  </div>
+                  <div class="col-12 col-md-auto">
+                    <p class="font-size-sm text-muted mb-0">
+                      Building informations can be updated later.
+                    </p>
+                  </div>
+                </div> <!-- / .row -->
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+</body>
