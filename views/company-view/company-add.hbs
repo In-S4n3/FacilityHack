@@ -1,28 +1,119 @@
+<body class="padtop-100">
+
 <div class="h2-stylings">
   <h2>Add a New Company</h2>
 </div>
 
-<div class="form-group form-color">
-  <form action="/companies/add" method="post" enctype="multipart/form-data">
-    <label>Company Name:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
-    <br>
-    <label for="">Company NIF:</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="companyNif">
-    <br>
-    <label for="">Address:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
-    <br>
-    <label for="">Type of Services:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="typeOfServices">
-    <br>
-    <label for="">Years of Activity</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="yearsOfactivity">
-    <br>
-    <label>Company Logo</label>
-    <br>
-    <input type="file" name="photo">
-    <br>
-    <input class="button" type="submit" value="ADD">
-  </form>
-</div>
+<!-- FORM ================================================== -->
+    <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+            <!-- Card -->
+            <div class="card card-border shadow-light-lg border border-white">
+              <div class="card-body">
+                
+                <!-- Form -->
+                <form action="/companies/add" method="post" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyName">
+                          Company Name
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyEmail">
+                          Building NIF
+                        </label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="companyNif">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyName">
+                          Type of Services
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="typeOfServices">
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyEmail">
+                          Year of Activity
+                        </label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="yearsOfactivity">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyMessage">
+                          Company Address
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12">
+                      
+                      <div class="form-group mb-5">
+                        <p class="mb-2">
+                          Company Logo
+                        </p>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="applyCover" name="photo">
+                          <label class="custom-file-label" for="applyCover">
+                            Choose Logo
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md">
+                      
+                      <!-- Submit -->
+                      <button class="btn btn-primary mb-6 mb-md-0 lift" type="submit" value="ADD">
+                        Add Company
+                      </button>
+
+                    </div>
+                    <div class="col-12 col-md-auto">
+
+                      <p class="font-size-sm text-muted mb-0">
+                        Company informations can be updated later.
+                      </p>
+                      
+                    </div>
+                  </div> <!-- / .row -->
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>

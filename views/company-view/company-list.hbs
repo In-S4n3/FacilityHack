@@ -1,8 +1,14 @@
+<body id="building-list" class="padtop-100">
+
+
+
+<!-- COMPANIES LIST ================================================== -->
 
 <div class="container">
     <div class="h2-stylings">
-        <h2>Company List</h2>
+        <h2>Companies List</h2>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -10,10 +16,9 @@
             {{#each company}}
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{this.imgPath}}"
-                        class="card-img-top" alt="...">
+                    <img src="{{this.imgPath}}" class="card-img-top card_img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/companies/{{this._id}}">{{this.name}}</a></h5>
+                        <h5 class="card-title"><a href="/companies/{{this._id}}">{{this.name}} </a></h5>
                         <p class="card-text"></p>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -27,6 +32,39 @@
 
         </div>
     </div>
-    <a href="/">Retun to main page</a>
 </div>
 
+
+<br>
+<hr>
+
+<!-- CTA ================================================== -->
+    <section class="pt-6 pt-md-8 mb-100 mt-100">
+      <div class="container pb-6 pb-md-8 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-12 col-md">
+            
+            <!-- Heading -->
+            <h3 class="font-weight-bold mb-1">
+              What to suggest a new Company?
+            </h3>
+
+            <!-- Text -->
+            <p class="font-size-lg text-muted mb-6 mb-md-0">
+              Just add it to the list!
+            </p>
+
+          </div>
+          <div class="col-12 col-md-auto">
+                
+            <!-- Button -->
+            <a href="/companies/add" class="btn btn-primary lift">
+              Add New Company
+            </a>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>
