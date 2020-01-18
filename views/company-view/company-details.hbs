@@ -1,32 +1,82 @@
+<body class="padtop-100">
+
 <div class="h2-stylings">
-  <h2>Company Details</h2>
+<h2>{{company.name}}</h2>
 </div>
 
-<br>
-<div>
-  <h3>{{company.name}}</h3>
-  <br><br>
-  <p>Type of Services: <h4>{{company.typeOfServices}}</h4>
-  </p>
-  <p>Years of Activity: <h4>{{company.yearsOfactivity}}</h4>
-  </p>
-  <p>Address: <h4>{{company.address}}</h4>
-  </p>
-  
-</div>
+<!-- COMPANIES PROFILE ================================================== -->
+    <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+            <!-- Card -->
+            <div class="card card-border shadow-light-lg border border-white">
+              <div class="card-body">
+                
+                <img src="{{company.imgPath}}" alt="..." class="img-thumbnail">
+                
+                  <div class="row">
+                    <div class="col-12">
 
+                      <div>
+                        <br><br>
+                        <p>Type of Services: <h4>{{company.typeOfServices}}</h4>
+                        </p>
+                        <p>Years of Activity: <h4>{{company.yearsOfactivity}}</h4>
+                        </p>
+                        <p>Address: <h4>{{company.address}}</h4>
+                        </p>
+                        
+                      </div>
 
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md">
+                      
+                      
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-secondary" href="/companies/edit?company_id={{company._id}}">Edit</a>
+                          <div>
+                            <form action="/companies/{{company._id}}/delete" method="POST">
+                              <button class="btn btn-secondary" type="submit">Delete</button>
+                            </form>
+                          </div>
+              
 
-<br>
-<a class="button-1" href="/companies/edit?company_id={{company._id}}">Edit</a>
+                    </div>
+                    <div class="col-12 col-md-auto">
 
-<br>
+                      <br>
 
-<div>
-  <form action="/companies/{{company._id}}/delete" method="POST">
-    <button class="button-1" type="submit">Delete</button>
-  </form>
-</div>
+                      <p class="font-size-sm text-muted mb-0">
+                        
+                        <ol class="breadcrumb breadcrumb-scroll bg-white">
+                          <li class="breadcrumb-item">
+                            <a class="text-gray-700" href="/Companies/">
+                              Go back to Companies List
+                            </a>
+                          </li>
+                          <li class="breadcrumb-item active" aria-current="page">
+                            {{company.name}}
+                          </li>
+                        </ol>
 
-<br>
-<a href="/companies">Return to Main Page</a class="button">
+                      </p>
+                      
+                    </div>
+                      
+                    </div>
+                  </div> <!-- / .row -->
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>
