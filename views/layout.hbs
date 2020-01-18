@@ -14,15 +14,18 @@
 <body>
 
   <div class="topnav fixed-top nav-footer">
-    
+
     {{#ifCond user '||' professional}}
-      <a class="active" href="/console">FacilityHack</a>
+    <a class="active" href="/console">FacilityHack</a>
     {{else}}
-      <a class="active" href="/">FacilityHack</a>
+    <a class="active" href="/">FacilityHack</a>
     {{/ifCond}}
-    
+
+    {{#ifCond user '||' professional}}
     <a href="/buildings">Buildings</a>
     <a href="/companies">Companies</a>
+    {{/ifCond}}
+
 
     {{#ifCond user '||' professional}}
 
@@ -36,7 +39,7 @@
 
     <div class="login-container">
       <form action="/login">
-        <button type="submit" >Login</button>
+        <button type="submit">Login</button>
     </div>
     </form>
 
@@ -66,118 +69,118 @@
   {{{body}}}
 
 
-  
+
   <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark nav-footer bg-secondary padtop-100">
-
-      </div>
-      <!-- Grid row-->
+  <footer class="page-footer font-small unique-color-dark nav-footer bg-secondary padtop-100">
 
     </div>
-  </div>
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5">
-
-    <!-- Grid row -->
-    <div class="row mt-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-        <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">About BuildingHack</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Features</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Santander Totta</a>
-        </p>
-        <p>
-          <a href="#!">Correio da Manhã</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">IronHack</a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Your Account</a>
-        </p>
-        <p>
-          <a href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a href="#!">Shipping Rates</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <i class="fas fa-home mr-3"></i> HQ - Lisbon, Portugal </p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> info@FacilityHack.com</p>
-        <p>
-          <i class="fas fa-home mr-3"></i> International Office, Silicon Valley </p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> info@FacilityHack.com</p>
-        
-
-      </div>
-      <!-- Grid column -->
+    <!-- Grid row-->
 
     </div>
-    <!-- Grid row -->
+    </div>
 
-  </div>
-  <!-- Footer Links -->
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> BuildingHack.com</a>
-  </div>
-  <!-- Copyright -->
+      <!-- Grid row -->
+      <div class="row mt-3">
 
-</footer>
-<!-- Footer -->
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">About BuildingHack</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Features</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="#!">Santander Totta</a>
+          </p>
+          <p>
+            <a href="#!">Correio da Manhã</a>
+          </p>
+          <p>
+            <a href="#!">BrandFlow</a>
+          </p>
+          <p>
+            <a href="#!">IronHack</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="#!">Your Account</a>
+          </p>
+          <p>
+            <a href="#!">Become an Affiliate</a>
+          </p>
+          <p>
+            <a href="#!">Shipping Rates</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> HQ - Lisbon, Portugal </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@FacilityHack.com</p>
+          <p>
+            <i class="fas fa-home mr-3"></i> International Office, Silicon Valley </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@FacilityHack.com</p>
+
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> BuildingHack.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
 
   <script src="/javascripts/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ8kX3TpffPm4OHVYHNrgzvsAdeRItTaE" async defer>
-</script>
+  </script>
 </body>
 
 </html>

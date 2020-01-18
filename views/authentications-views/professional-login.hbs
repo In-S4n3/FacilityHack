@@ -1,65 +1,71 @@
 <body id="login_signup">
 
-<!-- CONTENT ================================================== -->
-    <section class="section-border border-primary">
-      <div class="container d-flex flex-column">
-        <div class="row align-items-center justify-content-center no-gutters min-vh-100">
-          <div class="col-8 col-md-6 col-lg-7 offset-md-1 order-md-2 mt-auto mt-md-0 pt-8 pb-4 py-md-11">
+  <!-- CONTENT ================================================== -->
+  <section class="section-border border-primary">
+    <div class="container d-flex flex-column">
+      <div class="row align-items-center justify-content-center no-gutters min-vh-100">
+        <div class="col-8 col-md-6 col-lg-7 offset-md-1 order-md-2 mt-auto mt-md-0 pt-8 pb-4 py-md-11">
 
-            <!-- Image -->
-            <img src="images/undraw_security_o890.svg" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0" alt="..." data-aos="fade-up" data-aos-delay="100">
+          <!-- Image -->
+          <img src="images/undraw_security_o890.svg" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0" alt="..."
+            data-aos="fade-up" data-aos-delay="100">
 
-          </div>
-          <div class="col-12 col-md-5 col-lg-4 order-md-1 mb-auto mb-md-0 pb-8 py-md-11">
-            
-            <!-- Heading -->
-            <h1 class="mb-0 font-weight-bold text-center">
-              Professional
-            </h1>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 order-md-1 mb-auto mb-md-0 pb-8 py-md-11">
 
-            <!-- Text -->
-            <p class="mb-6 text-center text-muted">
-              Login and start presenting solutions.
-            </p>
+          <!-- Heading -->
+          <h1 class="mb-0 font-weight-bold text-center">
+            Professional
+          </h1>
 
-            <!-- Form -->
-              <form action="/professional-login" method="POST" id="form" class="mb-6">
+          <!-- Text -->
+          <p class="mb-6 text-center text-muted">
+            Login and start presenting solutions.
+          </p>
 
-                <!-- Email -->
-                <label for="username">NIF</label>
-                <input type="text" class="form-control mb-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="nif" placeholder="Enter your NIF">
-                <br>
+          <!-- Form -->
+          <form action="/professional-login" method="POST" id="form" class="mb-6">
 
-                <!-- Password -->
-                <label for="password">Password</label>
-                <input type="password" class="form-control mb-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="password" placeholder="Enter your password">
-
-                {{#if errorMessage }}
-                <div class="error-message mb-25 text-danger">{{ errorMessage }}</div>
-                {{/if}}
-
-                <!-- Submit -->
-                <button class="btn btn-block btn-primary mb-12">Sign in</button>
-
-              </form>
-
-            <!-- Text -->
-            <p class="mb-0 font-size-sm text-center text-muted">
-              Don't have an account yet? <a href="/professional-signup">Sign up</a>.
-            </p>
+            <!-- Email -->
+            <label for="username">NIF</label>
+            <input type="text" class="form-control mb-12" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="nif" placeholder="Enter your NIF">
             <br>
-            <div class="alert alert-primary alert-dismissible fade show" role="alert">
-              <strong>Not a Professional?</strong> <br>
-              <a href="/login">Login</a> here, or <a
-              href="/signup">Sign-up</a> here..
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
 
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" class="form-control mb-12" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="password" placeholder="Enter your password">
+
+            {{#if errorMessage }}
+            <div class="error-message mb-25 text-danger">{{ errorMessage }}</div>
+            {{/if}}
+
+            <!-- Submit -->
+            <button class="btn btn-block btn-primary mb-12">Sign in</button>
+
+          </form>
+
+          <!-- Text -->
+          <p class="mb-0 font-size-sm text-center text-muted">
+            Don't have an account yet? <a href="/professional-signup">Sign up</a>.
+          </p>
+          <br>
+          <p class="mb-0 font-size-sm text-center text-muted">
+            Have you changed your mind? <a href="/">Go back</a>.
+          </p>
+          <br>
+          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>Not a Professional?</strong> <br>
+            <a href="/login">Login</a> here, or <a href="/signup">Sign-up</a> here..
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        </div> <!-- / .row -->
-      </div> <!-- / .container -->
-    </section>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
 
 </body>

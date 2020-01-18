@@ -26,10 +26,10 @@
 <form id="form" action="/signup" method="POST" class="mb-6">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" name="firstName" placeholder="First name">
+      <input type="text" class="form-control" name="firstName" placeholder="First name" required>
     </div>
     <div class="col">
-      <input type="text" class="form-control" name="lastName" placeholder="Last name">
+      <input type="text" class="form-control" name="lastName" placeholder="Last name" required>
     </div>
     <br>
   </div>
@@ -37,7 +37,7 @@
   <input type="text" class="form-control" name="username" placeholder="Your Username">
   <br>
   <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
-    placeholder="Email">
+    placeholder="Email" required>
   <br>
 
   <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password"
@@ -67,6 +67,12 @@
 
 <br>
 
+<p class="mb-0 font-size-sm text-center text-muted">
+  Have you changed your mind? <a href="/">Go back</a>.
+</p>
+
+<br>
+
 <div class="alert alert-primary alert-dismissible fade show" role="alert">
               <strong>Are you a Professional?</strong> <br>
               <a href="/professional-login">Login</a> here, or <a
@@ -80,6 +86,5 @@
         </div> <!-- / .row -->
       </div> <!-- / .container -->
     </section>
-
 
 </body>
