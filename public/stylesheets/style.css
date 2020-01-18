@@ -146,6 +146,15 @@ a {
 #console .page-footer {
   display: none; }
 
+#search .page-footer {
+  display: none; }
+
+.mb-300 {
+  margin-bottom: 300px; }
+
+.mb-200 {
+  margin-bottom: 200px; }
+
 .mb-100 {
   margin-bottom: 100px; }
 
@@ -157,6 +166,12 @@ a {
 
 .mb-12 {
   margin-bottom: 12px; }
+
+.mt-200 {
+  margin-top: 200px; }
+
+.mt-100 {
+  margin-top: 100px; }
 
 .mt-50 {
   margin-top: 50px; }
@@ -197,7 +212,7 @@ a {
 
 /* Style page content */
 .main {
-  margin-left: 220px;
+  margin-left: 240px;
   /* Same as the width of the sidebar */
   padding: 0px 10px; }
 
@@ -208,10 +223,19 @@ a {
   .sidenav a {
     font-size: 18px; } }
 
-#map {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; }
+a {
+  padding-left: 5px; }
+
+/* some simple transitions to make the upvote and downvote
+buttons fade in as a visual cue for the user */
+.glyphicon {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out; }
+
+.glyphicon:hover {
+  opacity: 0.75;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

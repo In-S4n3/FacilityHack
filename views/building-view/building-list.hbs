@@ -40,13 +40,6 @@
 
 <br>
 
-<form class="form-inline md-form mr-auto mb-4 h2-stylings" action="/buildings/search" method="GET">
-    <input class="form-control mr-sm-2" type="text" placeholder="Find your Building here" name="name"
-        aria-label="Search">
-    <button class="button-search btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-</form>
-
-
 
 <!-- BUILDING LIST ================================================== -->
 
@@ -78,47 +71,39 @@
 
         </div>
     </div>
-
-    <a href="/">Retun to main page</a>
 </div>
 
-</body>
 
 <br>
+<hr>
 
-<!-- CONTENT ================================================== -->
-    <section class="py-8 py-md-11 mt-n10 mt-md-n14">
-      <div class="container">
-        <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
-          
-          {{#each building}}
-          <div class="col-12 col-md-4 product">
+<!-- CTA ================================================== -->
+    <section class="pt-6 pt-md-8 mb-100 mt-100">
+      <div class="container pb-6 pb-md-8 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-12 col-md">
+            
+            <!-- Heading -->
+            <h3 class="font-weight-bold mb-1">
+              Didn't found your building?
+            </h3>
 
-            <!-- Card -->
-            <a class="card card-flush mb-7" style="width: 18rem;" href="#!">
+            <!-- Text -->
+            <p class="font-size-lg text-muted mb-6 mb-md-0">
+              Just add it to the list!
+            </p>
 
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="{{this.imgPath}}" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h8 class="text-uppercase mb-1 text-muted">{{this.address}}</h8>
-
-                <!-- Heading -->
-                <h5 class="mb-0">{{this.name}}</h5>
-
-              </div>
-
+          </div>
+          <div class="col-12 col-md-auto">
+                
+            <!-- Button -->
+            <a href="/buildings/add" class="btn btn-primary lift">
+              Add New Building
             </a>
 
           </div>
-          {{/each}}
-
-        </div>
-
-      </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
     </section>
+
+</body>
