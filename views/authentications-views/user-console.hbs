@@ -1,121 +1,137 @@
-<body id="console">
+<body id="console" class="padtop-100">
 
-<p>Console page</p>
+  <!-- CENTRAL ================================================== -->
+  <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-200 mt-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
-<div class="login-container login">
-      {{#if user}}
-      Welcome, {{user.username}}
-      {{/if}}
-    </div>
+          <!-- Card -->
+          <div class="card card-border shadow-light-lg border border-white">
+            <div class="card-body">
 
-<hr>
+              <div class="row">
+                <div class="col-12">
 
-abc
+                  {{#if user}}
+                  <div class="alert alert-warning alert-dismissible fade show mb-50" role="alert">
+                    <strong>Welcome back {{user.username}}</strong>
+                    You should check in on some of those fields below.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  {{/if}}
+                  {{#if professional}}
+                  <div class="alert alert-warning alert-dismissible fade show mb-50" role="alert">
+                    <strong>Welcome back {{professional.companyName}}</strong>
+                    You should check in on some of those fields below.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  {{/if}}
 
----
+                </div>
+              </div> <!-- / .row -->
+              <div class="row">
+                <div class="col-12">
 
-<section id="container-for-title">
-  <div>
-    <h1>
-      <p>Welcome to {{title}}</p>
-    </h1>
+                  <!-- SEARCH ================================================== -->
+
+                  <section class="py-6 mb-25">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12">
+
+                          <!-- Heading -->
+                          <h4 class="lead text-center text-md-center text-muted mb-6 mb-lg-8 mb-25">
+                            Find your building and start engaging now!
+                          </h4>
+
+                          <!-- Search form -->
+                          <form class="rounded shadow md-form mr-auto mb-4" action="/buildings/search" method="GET">
+                            <div class="input-group input-group-lg">
+
+                              <!-- Input -->
+                              <input class="form-control border-0 px-1" type="text"
+                                placeholder="Find your Building here" name="name" aria-label="Search"
+                                value="Edifício Sol">
+
+                              <!-- Append -->
+                              <div class="input-group-append">
+                                <span class="input-group-text border-0 py-0 pl-1 pr-3">
+
+                                  <!-- Button -->
+                                  <button class="btn btn-sm btn-primary" type="submit">
+                                    Search
+                                  </button>
+
+                              </div>
+
+                          </form>
+
+                        </div>
+                      </div> <!-- / .row -->
+                    </div>
+                  </section>
+
+                </div>
+              </div> <!-- / .row -->
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <div class="card">
+                    <div class="card-body">
+
+                      <!-- Image -->
+                      <img src="images/undraw_town_r6pc.svg" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+                        alt="..." data-aos="fade-up" data-aos-delay="100">
+
+                      <h5 class="card-title">Find your Building</h5>
+                      <p class="card-text">Report the pathologies of your building, we will help you fix it without you
+                        even have to leave your confort</p>
+                      <a href="/buildings" class="btn btn-primary">Go to Buildings Page</a>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <div class="card">
+                    <div class="card-body">
+
+                      <!-- Image -->
+                      <img src="images/undraw_best_place_r685 (1).svg"
+                        class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0" alt="..." data-aos="fade-up"
+                        data-aos-delay="100">
+
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Find a Companie</h5>
+                          <p class="card-text">You have a problem? Find a companie to help you! You have a problem? Find
+                            a companie to help you!</p>
+                          <a href="/companies" class="btn btn-primary">Go to Companies Page</a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+
+                </div>
+              </div>
+
+            </div>
+          </div> <!-- / .row -->
+        </div> <!-- / .container -->
+  </section>
+
   </div>
-</section>
-
-<div id="container-for-title">
-  <p><h2>The services website we all were missing!</h2></p>
-</div>
-
-
-
-<br>
-{{!-- <section>
-  <div >
-    <h3>We are here to make your building last longer, value more and look better</h3>
   </div>
-  <div>
-    <img src="https://www.buildingincloud.net/wp-content/uploads/2019/09/innovation-of-fm.jpg" alt="">
   </div>
-</section> --}}
-
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top"
-      src="https://s3-us-west-1.amazonaws.com/acropolis-wp-content-uploads/2019/05/BigRentz_ConstructionRiskManagement_Hero.png"
-      alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Find a Companie</h5>
-      <p class="card-text">You have a problem? Find a companie to help you!</p>
-      <div id="container-for-buttons">
-        {{#if user}}
-        <a href="/companies" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
-          class="buttons-index">Consult Companies</a>
-        {{/if}}
-      </div>
-       <div id="container-for-buttons">
-        {{#if professional}}
-        <a href="/companies/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
-          class="buttons-index">Add Company</a>
-
-        <a href="/companies" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
-          class="buttons-index">Consult Companies</a>
-        {{/if}}
-      </div>
-    </div>
   </div>
-
-  <div class="card">
-    <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/acropolis-wp-content-uploads/bigrentz-recruiting-skilled-workers-hero-large.png"
-      alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Find your Building</h5>
-      <p class="card-text">Report the pathologies of your building, we will help you fix it without you even have to leave your confort</p>
-    </div>
-    <div id="container-for-buttons">
-      {{#if user}}
-      <a href="/buildings" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
-        class="buttons-index">Consult
-        Buildings</a>
-      {{/if}}
-    </div>
-    <div id="container-for-buttons">
-      {{#if professional}}
-      <a href="/buildings/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
-        class="buttons-index">Add Building</a>
-
-      <a href="/buildings" class="btn btn-light btn-lg active" role="button" aria-pressed="true"
-        class="buttons-index">Consult
-        Buildings</a>
-      {{/if}}
-    </div>
-  </div>
-</div>
-
-
-{{!-- CARDS --}}
-<br><br><br>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">For Profissionals</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/professional-login" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">For Users</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/login" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
+  </section>
 
 
 </body>

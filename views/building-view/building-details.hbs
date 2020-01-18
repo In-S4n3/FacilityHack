@@ -1,186 +1,216 @@
 <body id="building_details" class="padtop-100">
 
+  <!-- BUILDING PROFILE ================================================== -->
 
-<<<<<<< HEAD
-<!-- Side navigation -->
-<div class="sidenav">
-  <img src="{{building.imgPath}}" alt="..." class="img-thumbnail">
-  <a href="#">Building Details</a>
-  <hr>
-  <a href="#">Building Admin</a>
-  <hr>
-  <a href="#">Building Issues</a>
-  <hr>
-  <a href="#">Residents</a>
-  <hr>
-  <a href="#">Edit</a>
-  <hr>
-  <a href="#">Delete</a>
-  <hr>
-  <a href="/buildings">Return to Building list</a>
-</div>
-
-<!-- Page content -->
-<div class="main">
-
-<div class="h2-stylings">
-  <h3>{{building.name}}</h3>
-</div>
-=======
-  <!-- Side navigation -->
-  <div class="sidenav">
-    <img src="https://imgs.6sqft.com/wp-content/uploads/2019/08/14085448/Walker-House-7-e1565790973483.jpg" alt="..."
-      class="img-thumbnail">
-    <a href="#">Building Details</a>
-    <hr>
-    <a href="#">Building Admin</a>
-    <hr>
-    <a href="#">Building Issues</a>
-    <hr>
-    <a href="#">Residents</a>
-    <hr>
-    <a href="#">Edit</a>
-    <hr>
-    <a href="#">Delete</a>
-    <hr>
-    <a href="/buildings">Return to Building list</a>
+  <div class="h2-stylings">
+    <h3>{{building.name}}</h3>
   </div>
->>>>>>> e1449a265e6e01282ece45746406709d8d526089
 
-  <!-- Page content -->
-  <div class="main">
-
-    <div class="h2-stylings">
-      <h3>{{building.name}}</h3>
-    </div>
-
+  <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h4>Building Details</h4>
-          <br>
-          <p>Built by: <h5>{{building.builder}}</h5>
-          </p>
-          <p>Year of Construction: <h5>{{building.yearOfConstruction}}</h5>
-          </p>
-          <p>Number of floors: <h5>{{building.floors}}</h5>
-          </p>
-          <p>Address: <h5>{{building.address}}</h5>
-          </p>
-          <p>Elevators: <h5>{{building.numOfElevators}}</h5>
-          </p>
-          <br>
-          {{#if professional}}
-          <a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
-          <br>
-          <div>
-            <form action="/buildings/{{building._id}}/delete" method="POST">
-              <button class="button-1" type="submit">Delete</button>
-            </form>
+        <div class="col-12">
+
+          <!-- Card -->
+          <div class="card card-border shadow-light-lg border border-white">
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col-12 col-md-4">
+
+
+                  <img src="{{building.imgPath}}" alt="..." class="img-thumbnail">
+
+                  <hr>
+                  {{#if professional}}
+                  <div class="btn-group btn-block" role="group" aria-label="Basic example">
+                    <a class="btn btn-secondary" href="/buildings/edit?building_id={{building._id}}">Edit</a>
+                    <br>
+                    <div>
+                      <form action="/buildings/{{building._id}}/delete" method="POST">
+                        <button class="btn btn-secondary" type="submit">Delete</button>
+                      </form>
+                    </div>
+                  </div>
+                  {{/if}}
+
+
+                </div>
+                <div class="col-12 col-md-4">
+
+
+                  <h4>Building Details</h4>
+                  <br>
+                  <p>Built by: <h5>{{building.builder}}</h5>
+                  </p>
+                  <p>Year of Construction: <h5>{{building.yearOfConstruction}}</h5>
+                  </p>
+                  <p>Number of floors: <h5>{{building.floors}}</h5>
+                  </p>
+                  <p>Address: <h5>{{building.address}}</h5>
+                  </p>
+                  <p>Elevators: <h5>{{building.numOfElevators}}</h5>
+                  </p>
+                  <br>
+                  {{!-- {{#if professional}}
+                  <a class="button-1" href="/buildings/edit?building_id={{building._id}}">Edit</a>
+                  <br>
+                  <div>
+                    <form action="/buildings/{{building._id}}/delete" method="POST">
+                      <button class="button-1" type="submit">Delete</button>
+                    </form>
+                  </div>
+                  {{/if}} --}}
+                  <br>
+
+
+                </div>
+                <div class="col-12 col-md-4">
+
+                  <div class="form-group form-color">
+
+                    <form action="/buildings/{{building._id}}/issues/add" method="post">
+                      <h4>Insert an Issue</h4>
+                      <br>
+                      {{#if user}}
+                      <label>Resident:</label>
+                      <br>
+                      <label for="">
+                        <h6>{{user.firstName}} {{user.lastName}}</h6>
+                      </label>
+                      <br>
+                      {{else}}
+                      <label>Company:</label>
+                      <br>
+                      <label for="">
+                        <h6>{{professional.companyName}}</h6>
+                      </label>
+                      <br>
+                      {{/if}}
+                      <br>
+                      <label for="">Floor:</label>
+                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="floor">
+                      <br>
+                      {{#if user}}
+                      <label for="">Apartment:</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="apartment">
+                      <br>
+                      {{/if}}
+                      <label for="">Type of issue:</label>
+                      <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="issueType">
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Cracks">Cracks</option>
+                        <option value="Elevators">Elevators</option>
+                        <option value="Inflitrations">Inflitrations</option>
+                        <option value="TV Signal">TV Signal</option>
+                        <option value="Home Appliances">Home Appliances</option>
+                        <option value="Others">Others</option>
+                      </select>
+                      <br>
+                      <label for="">Commentary:</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="comment">
+                      <br>
+                      <button class="button btn-block" type="submit">Add Issue</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+              <div class="row">
+                <div class="col-12">
+
+
+
+                  <!-- BUILDING ISSUES ================================================== -->
+
+                  {{#each issue}}
+
+                  <hr>
+
+                  <form action="">
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item d-flex align-items-center">
+
+                        <!-- Text -->
+                        <div class="mr-auto">
+
+                          <!-- Heading -->
+                          <p class="font-weight-bold mb-1">
+                            {{this.comment}}
+                          </p>
+
+                          <!-- Text -->
+                          <p class="font-size-sm text-muted mb-0">
+                            {{this.issueType}} issue by {{this.userName}} | Floor: {{this.floor}}, Ap.:
+                            {{this.apartment}}
+                          </p>
+
+                        </div>
+
+                        <!-- Check -->
+                        <div class="badge badge-rounded-circle badge-success-soft ml-4">
+
+                          <div class="btn-group" role="group" aria-label="Basic example">
+
+                            {{#if ../user}}
+                            <a class="btn btn-secondary" href="/issues/edit?issue_id={{this._id}}">Edit</a>
+
+                            <form action="/issues/{{this._id}}/delete" method="POST">
+                              <button class="btn btn btn-secondary" type="submit">Delete</button>
+                            </form>
+
+                            {{else}}
+                            <a class="btn btn-secondary" href="/issues/solution?issue_id={{this._id}}">Solution</a>
+                            {{/if}}
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  {{/each}}
+
+                  <hr>
+
+                </div>
+              </div> <!-- / .row -->
+              <div class="row align-items-center">
+                <div class="col-12 col-md">
+
+
+
+                </div>
+                <div class="col-12 col-md-auto">
+
+                  <p class="font-size-sm text-muted mb-0">
+
+                    <ol class="breadcrumb breadcrumb-scroll bg-white">
+                      <li class="breadcrumb-item">
+                        <a class="text-gray-700" href="http://localhost:3000/buildings/">
+                          Go back to Buildings List
+                        </a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        {{building.name}}
+                      </li>
+                    </ol>
+
+                  </p>
+
+                </div>
+              </div> <!-- / .row -->
+              </form>
+
+            </div>
           </div>
-          {{/if}}
-          <br>
+
         </div>
-
-
-        <div class="col">
-          <div class="form-group form-color">
-            <form action="/buildings/{{building._id}}/issues/add" method="post">
-              <h4>Insert an Issue</h4>
-              <br>
-              {{#if user}}
-              <label>Resident:</label>
-              <br>
-              <label for="">
-                <h6>{{user.firstName}} {{user.lastName}}</h6>
-              </label>
-              <br>
-              {{else}}
-              <label>Company:</label>
-              <br>
-              <label for="">
-                <h6>{{professional.companyName}}</h6>
-              </label>
-              <br>
-              {{/if}}
-              <br>
-              <label for="">Floor:</label>
-              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                name="floor">
-              <br>
-              {{#if user}}
-              <label for="">Apartment:</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                name="apartment">
-              <br>
-              {{/if}}
-              <label for="">Type of issue:</label>
-              <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType">
-                <option value="Cleaning">Cleaning</option>
-                <option value="Cracks">Cracks</option>
-                <option value="Elevators">Elevators</option>
-                <option value="Inflitrations">Inflitrations</option>
-                <option value="TV Signal">TV Signal</option>
-                <option value="Home Appliances">Home Appliances</option>
-                <option value="Others">Others</option>
-              </select>
-              <br>
-              <label for="">Commentary:</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                name="comment">
-              <br>
-              <button class="button" type="submit">ADD</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <h4>Building Issues</h4>
-      <br>
-      {{#each issue}}
-      <form action="">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <p><b>Resident:</b><br>{{this.userName}}</p>
-            </div>
-            {{#if ../professional}}
-            <div class="col-sm">
-              <p><b>Email:</b><br>{{this.email}}</p>
-            </div>
-            {{/if}}
-            <div class="col-sm">
-              <p><b>Type of Issue:</b><br>{{this.issueType}}</p>
-            </div>
-            <div class="col-sm">
-              <p><b>Floor:</b><br>{{this.floor}}</p>
-            </div>
-            <div class="col-sm">
-              <p><b>Appartment:</b><br>{{this.apartment}}</p>
-            </div>
-            <div class="col-sm">
-              <p><b>Commentary:</b><br>{{this.comment}}</p>
-            </div>
-            {{#if ../user}}
-            <a class="btn btn-outline-primary button-edit edit" href="/issues/edit?issue_id={{this._id}}">Edit</a>
-
-            <form action="/issues/{{this._id}}/delete" method="POST">
-              <button class="btn btn-outline-primary button-edit" type="submit">Delete</button>
-            </form>
-            {{else}}
-            <a class="btn btn-primary button-edit" href="/issues/solution?issue_id={{this._id}}">Present a solution</a>
-            {{/if}}
-          </div>
-        </div>
-        <hr>
-      </form>
-      {{/each}}
-
-      <br>
-      <a href="/buildings">Return to Building list</a class="button">
-    </div>
-  </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
 
 </body>

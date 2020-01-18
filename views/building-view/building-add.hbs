@@ -1,44 +1,4 @@
-<div class="h2-stylings">
-  <h2>Add a New Building</h2>
-</div>
-
-<div class="form-group form-color">
-  <form action="/buildings/add" method="post" enctype="multipart/form-data">
-    <label>Building Name:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
-    <br>
-    <label for="">Building NIF:</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="buildingNif">
-    <br>
-    <label for="">Address:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
-    <br>
-    <label for="">Builder:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="builder">
-    <br>
-    <label for="">Number of Floors</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floors">
-    <br>
-    <label for="">Number of Apartements</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      name="numOfApartments">
-    <br>
-    <label for="">Year of Construction</label>
-    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      name="yearOfConstruction">
-    <br>
-    <label for="">Number of Elevators</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      name="numOfElevators">
-    <br>
-    <label>Building Photo</label>
-    <br>
-    <input type="file" name="photo">
-    <br>
-    <input class="button" type="submit" value="ADD">
-  </form>
-</div>
-
+<body class="padtop-100">
 
 <!-- FORM ================================================== -->
     <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
@@ -51,7 +11,7 @@
               <div class="card-body">
                 
                 <!-- Form -->
-                <form>
+                <form action="/buildings/add" method="post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-12 col-md-6">
                       
@@ -59,7 +19,7 @@
                         <label for="applyName">
                           Building Name
                         </label>
-                        <input type="text" class="form-control" id="applyName" placeholder="Heden Santa Apolónia">
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ed. Heden Santa Apolónia" name="name">
                       </div>
 
                     </div>
@@ -69,7 +29,7 @@
                         <label for="applyEmail">
                           Building NIF
                         </label>
-                        <input type="text" class="form-control" id="applyEmail" placeholder="hello@domain.com">
+                        <input type="number" class="form-control" id="applyEmail" placeholder="912345678" name="buildingNif">
                       </div>
 
                     </div>
@@ -81,7 +41,7 @@
                         <label for="applyName">
                           Number of Floors
                         </label>
-                        <input type="text" class="form-control" id="applyName" placeholder="2">
+                        <input type="number" class="form-control" id="applyName" placeholder="2" name="floors">
                       </div>
 
                     </div>
@@ -91,7 +51,7 @@
                         <label for="applyEmail">
                           Number of Apartements
                         </label>
-                        <input type="text" class="form-control" id="applyEmail" placeholder="11 Rooms">
+                        <input type="number" class="form-control" id="applyEmail" placeholder="11 Rooms" name="numOfApartments">
                       </div>
 
                     </div>
@@ -101,7 +61,7 @@
                         <label for="applyEmail">
                           Number of Elevators
                         </label>
-                        <input type="text" class="form-control" id="applyEmail" placeholder="1">
+                        <input type="number" class="form-control" id="applyEmail" placeholder="1" name="numOfElevators">
                       </div>
 
                     </div>
@@ -113,7 +73,7 @@
                         <label for="applyName">
                           Year of Construction
                         </label>
-                        <input type="text" class="form-control" id="applyName" placeholder="2019">
+                        <input type="date" class="form-control" id="applyName" placeholder="2019/12/01" name="yearOfConstruction">
                       </div>
 
                     </div>
@@ -123,7 +83,7 @@
                         <label for="applyEmail">
                           Builder
                         </label>
-                        <input type="text" class="form-control" id="applyEmail" placeholder="hello@domain.com">
+                        <input type="text" class="form-control" id="applyEmail" placeholder="Ex: Vinci" name="builder">
                       </div>
 
                     </div>
@@ -135,7 +95,7 @@
                         <label for="applyMessage">
                           Building Address
                         </label>
-                        <input type="text" class="form-control" id="applyEmail" placeholder="Doca Jardim do Tabaco Terminal de Cruzeiros de Lisboa - Edifício NW, 1º Piso, 1100-651 Lisboa">
+                        <input type="text" class="form-control" id="applyEmail" placeholder="Doca Jardim do Tabaco Terminal de Cruzeiros de Lisboa - Edifício NW, 1º Piso, 1100-651 Lisboa" name="address">
                       </div>
 
                     </div>
@@ -148,7 +108,7 @@
                           Building Photo
                         </p>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="applyCover">
+                          <input type="file" class="custom-file-input" id="applyCover" name="photo">
                           <label class="custom-file-label" for="applyCover">
                             Choose photo
                           </label>
@@ -161,7 +121,7 @@
                     <div class="col-12 col-md">
                       
                       <!-- Submit -->
-                      <button class="btn btn-primary mb-6 mb-md-0 lift">
+                      <button class="btn btn-primary mb-6 mb-md-0 lift" type="submit" value="ADD">
                         Add Building
                       </button>
 
@@ -183,3 +143,5 @@
         </div> <!-- / .row -->
       </div> <!-- / .container -->
     </section>
+
+</body>

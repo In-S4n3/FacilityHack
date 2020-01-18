@@ -107,7 +107,7 @@ router.post("/professional-signup", (req, res, next) => {
         password: hashPass
       })
         .then(() => {
-          res.redirect("/");
+          res.redirect("/professional-login");
         })
         .catch(error => {
           console.log(error);
@@ -192,7 +192,7 @@ router.post("/professional-login", (req, res, next) => {
       if (bcrypt.compareSync(thePassword, professional.password)) {
         // Save the login in the session!
         req.session.currentProfessional = professional;
-        res.redirect("/");
+        res.redirect("/console");
       } else {
         res.render("authentications-views/professional-login", {
           errorMessage: "Incorrect password"

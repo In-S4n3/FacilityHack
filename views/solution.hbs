@@ -1,50 +1,85 @@
-<div class="h2-stylings">
-  <h2>Send your Solution</h2>
-</div>
-<hr>
-<br>
-<form action="/issues/solution?issue_id={{issue._id}}">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <p><b>User:</b><br><br>{{issue.userName}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>User Email:</b><br><br>{{issue.email}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Type of Issue:</b><br><br>{{issue.issueType}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Floor:</b><br><br>{{issue.floor}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Appartment:</b><br><br>{{issue.apartment}}</p>
-      </div>
-      <div class="col-sm">
-        <p><b>Commentary:</b><br><br>{{issue.comment}}</p>
-      </div>
-    </div>
-  </div>
-</form>
-<br>
+<body class="padtop-100">
+
+<!-- FORM ================================================== -->
+    <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+            <div class="h2-stylings">
+              <h2>Send your Solution</h2>
+            </div>
+
+            <!-- Card -->
+            <div class="card card-border shadow-light-lg border border-white">
+              <div class="card-body">
+                
 
 
-<form action="/send-email" method="post" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="">Email</label>
-    <input class="form-control" type="email" name="email" id="">
-  </div>
-  <div class="form-group">
-    <label for="">Subject</label>
-    <input class="form-control" type="text" name="subject" id="">
-  </div>
-  <div class="form-group">
-    <label for="">Message</label>
-    <textarea class="form-control" type="text" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
-  </div>
-  <button type="submit">Submit</button>
-</form>
+                  <div class="row">
+                    <div class="col-12">
+
+                          <form action="/issues/solution?issue_id={{issue._id}}">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-sm">
+                                  <p><b>User:</b><br><br>{{issue.userName}}</p>
+                                </div>
+                                <div class="col-sm">
+                                  <p><b>User Email:</b><br><br>{{issue.email}}</p>
+                                </div>
+                                <div class="col-sm">
+                                  <p><b>Type of Issue:</b><br><br>{{issue.issueType}}</p>
+                                </div>
+                                <div class="col-sm">
+                                  <p><b>Floor:</b><br><br>{{issue.floor}}</p>
+                                </div>
+                                <div class="col-sm">
+                                  <p><b>Appartment:</b><br><br>{{issue.apartment}}</p>
+                                </div>
+                                <div class="col-sm">
+                                  <p><b>Commentary:</b><br><br>{{issue.comment}}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                          <br>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <hr>
+                  <div class="row">
+                    <div class="col-12">
+
+                          <form action="/send-email" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                              <label for="">Email</label>
+                              <input class="form-control" type="email" name="email" id="">
+                            </div>
+                            <div class="form-group">
+                              <label for="">Subject</label>
+                              <input class="form-control" type="text" name="subject" id="">
+                            </div>
+                            <div class="form-group">
+                              <label for="">Message</label>
+                              <textarea class="form-control" type="text" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
+                            </div>
+                            <button type="submit">Submit</button>
+                          </form>
+
+                    </div>
+                  </div> <!-- / .row -->
+                
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>

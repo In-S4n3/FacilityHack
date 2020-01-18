@@ -1,3 +1,5 @@
+<body id="search">
+
 <div class="container padtop-100">
   <div class="row">
     <div class="col">
@@ -13,29 +15,74 @@
 
     </div>
     <div class="col">
-      
-      <div class="col">
 
-            <p>Search for other building</p>
-            <!-- Search form -->
-            <form class="form-inline md-form mr-auto mb-4" action="/buildings/search" method="GET">
-                <input class="form-control mr-sm-2" type="text" placeholder="Find your Building here" name="name" aria-label="Search">
-                <button class="btn btn-danger aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+<!-- SEARCH ================================================== -->
+
+    <section class="py-6 mb-200">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+          <!-- Heading -->
+            <h4 class="lead text-center text-md-center text-muted mb-6 mb-lg-8 mb-25">
+              Search for other building?
+            </h4>
+
+          <!-- Search form -->
+            <form class="rounded shadow md-form mr-auto mb-4" action="/buildings/search" method="GET">
+              <div class="input-group input-group-lg">
+
+                <!-- Input -->
+                <input class="form-control border-0 px-1" type="text" placeholder="Find your Building here" name="name" aria-label="Search" value="Edifício Sol">
+                
+                <!-- Append -->
+                <div class="input-group-append">
+                  <span class="input-group-text border-0 py-0 pl-1 pr-3">
+
+                <!-- Button -->
+                <button class="btn btn-sm btn-primary" type="submit">
+                  Search
+                </button>
+
+                </div>
+
             </form>
 
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Your Builging is not here?</h5>
-                    <p class="card-text">Just take a minute to add it.</p>
-                    <a href="http://localhost:3000/buildings/add" class="btn btn-primary">Add Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div> <!-- / .row -->
+      </div>
+    </section>
 
   </div>
-
 </div>
 
+<!-- CTA ================================================== -->
+    <section class="pt-6 pt-md-8 mb-100 mt-25">
+      <div class="container pb-6 pb-md-8 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-12 col-md">
+            
+            <!-- Heading -->
+            <h3 class="font-weight-bold mb-1">
+              Didn't found your building?
+            </h3>
+
+            <!-- Text -->
+            <p class="font-size-lg text-muted mb-6 mb-md-0">
+              Just add it to the list!
+            </p>
+
+          </div>
+          <div class="col-12 col-md-auto">
+                
+            <!-- Button -->
+            <a href="/buildings/add" class="btn btn-primary lift">
+              Add New Building
+            </a>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>

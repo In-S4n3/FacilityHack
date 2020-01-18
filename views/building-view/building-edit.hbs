@@ -1,45 +1,148 @@
-<div class="h2-stylings">
-  <h2>Edit a Building</h2>
-</div>
+<body class="padtop-100">
 
-<div class="form-group ">
-  <form action="/buildings/edit?building_id={{building._id}}" method="POST" enctype="multipart/form-data">
-    <label for="">Name:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
-      value="{{building.name}}">
-    <br>
-    <label for="">Building NIF:</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="buildingNif"
-      value="{{building.buildingNif}}">
-    <br>
-    <label for="">Address:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address"
-      value="{{building.address}}">
-    <br>
-    <label for="">Builder</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="builder"
-      value="{{building.builder}}">
-    <br>
-    <label for="">Number of Floors</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floors"
-      value="{{building.floors}}">
-    <br>
-    <label for="">Number of Apartements</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      name="numOfApartments" value="{{building.numOfApartments}}">
-    <br>
-    <label for="">Year of Construction</label>
-    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      name="yearOfConstruction" value="{{building.yearOfConstruction}}">
-    <br>
-    <label for="">Number of Elevators</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="numOfElevators"
-      value="{{building.numOfElevators}}">
-    <br>
-    <label>Building Photo</label>
-    <br>
-    <input type="file" name="photo">
-    <br>
-    <input class="button" type="submit" value="Edit">
-  </form>
-</div>
+<!-- FORM ================================================== -->
+
+    <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+            <!-- Card -->
+            <div class="card card-border shadow-light-lg border border-white">
+              <div class="card-body">
+                
+                <!-- Form -->
+                <form action="/buildings/edit?building_id={{building._id}}" method="POST" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyName">
+                          Building Name
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value="{{building.name}}">
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyEmail">
+                          Building NIF
+                        </label>
+                        <input type="number" class="form-control" id="applyEmail" name="buildingNif" value="{{building.buildingNif}}">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyName">
+                          Number of Floors
+                        </label>
+                        <input type="number" class="form-control" id="applyName" name="floors" value="{{building.floors}}">
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyEmail">
+                          Number of Apartements
+                        </label>
+                        <input type="number" class="form-control" id="applyEmail" name="numOfApartments" value="{{building.numOfApartments}}">
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyEmail">
+                          Number of Elevators
+                        </label>
+                        <input type="number" class="form-control" id="applyEmail" name="numOfElevators" value="{{building.numOfElevators}}">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyName">
+                          Year of Construction
+                        </label>
+                        <input type="date" class="form-control" id="applyName" name="yearOfConstruction" value="{{building.yearOfConstruction}}">
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyEmail">
+                          Builder
+                        </label>
+                        <input type="text" class="form-control" id="applyEmail" name="builder" value="{{building.builder}}">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12">
+                      
+                      <div class="form-group mb-5">
+                        <label for="applyMessage">
+                          Building Address
+                        </label>
+                        <input type="text" class="form-control" id="applyEmail" name="address" value="{{building.address}}">
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row">
+                    <div class="col-12">
+                      
+                      <div class="form-group mb-5">
+                        <p class="mb-2">
+                          Building Photo
+                        </p>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="applyCover" name="photo">
+                          <label class="custom-file-label" for="applyCover">
+                            Choose photo
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md">
+                      
+                      <!-- Submit -->
+                      <button class="btn btn-primary mb-6 mb-md-0 lift" type="submit" value="Edit">
+                        Edit Building
+                      </button>
+
+                    </div>
+                    <div class="col-12 col-md-auto">
+
+                      <p class="font-size-sm text-muted mb-0">
+                        Building informations can be updated later.
+                      </p>
+                      
+                    </div>
+                  </div> <!-- / .row -->
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>

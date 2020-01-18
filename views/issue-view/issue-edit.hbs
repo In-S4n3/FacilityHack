@@ -1,36 +1,65 @@
-<div class="h2-stylings">
-  <h2>Edit a Issue</h2>
-</div>
+<body class="padtop-100">
 
-<form action="/issues/edit?issue_id={{issue._id}}" method="post">
-  <br>
-  <label>Resident:</label>
-  <br>
-  <br>
-  <label>{{issue.userName}}</label>
-  <br>
-  <br>
-  <label for="">Floor:</label>
-  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor" value="{{issue.floor}}">
-  <br>
-  <label for="">Apartment:</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apartment" value="{{issue.apartment}}">
-  <br>
-  <label for="">Type of issue:</label>
-  <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType" value="{{issue.issueType}}">
-    <option value="Cleaning">Cleaning</option>
-    <option value="Cracks">Cracks</option>
-    <option value="Elevators">Elevators</option>
-    <option value="Inflitrations">Inflitrations</option>
-    <option value="TV Signal">TV Signal</option>
-    <option value="Home Appliances">Home Appliances</option>
-    <option value="Others">Others</option>
-  </select>
-  <br>
-  <label for="">Commentary:</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="comment" value="{{issue.comment}}">
-  <br>
-  <input class="button" type="submit" value="Edit">
-</form>
-<br>
-<a href="/buildings">Return to Building list</a class="button">
+<!-- FORM ================================================== -->
+    <section class="pt-8 pt-md-11 pb-8 pb-md-14 mb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            
+            <!-- Card -->
+            <div class="card card-border shadow-light-lg border border-white">
+              <div class="card-body">
+                
+
+
+                  <div class="row">
+                    <div class="col-12">
+                      
+                        <div class="h2-stylings">
+                          <h2>Edit a Issue</h2>
+                          </div>
+
+                          <form action="/issues/edit?issue_id={{issue._id}}" method="post">
+                            <br>
+                            <label>Resident:</label>
+                            <br>
+                            <br>
+                            <label>{{issue.userName}}</label>
+                            <br>
+                            <br>
+                            <label for="">Floor:</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="floor" value="{{issue.floor}}">
+                            <br>
+                            <label for="">Apartment:</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apartment" value="{{issue.apartment}}">
+                            <br>
+                            <label for="">Type of issue:</label>
+                            <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="issueType" value="{{issue.issueType}}">
+                              <option value="Cleaning">Cleaning</option>
+                              <option value="Cracks">Cracks</option>
+                              <option value="Elevators">Elevators</option>
+                              <option value="Inflitrations">Inflitrations</option>
+                              <option value="TV Signal">TV Signal</option>
+                              <option value="Home Appliances">Home Appliances</option>
+                              <option value="Others">Others</option>
+                            </select>
+                            <br>
+                            <label for="">Commentary:</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="comment" value="{{issue.comment}}">
+                            <br>
+                            <input class="btn btn-primary mb-6 mb-md-0 lift" type="submit" value="Edit Issue">
+                          </form>
+
+                    </div>
+                  </div> <!-- / .row -->
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+</body>
