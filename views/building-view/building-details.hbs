@@ -22,6 +22,7 @@
                   <img src="{{building.imgPath}}" alt="..." class="img-thumbnail">
 
                   <hr>
+                  {{#if professional}}
                   <div class="btn-group btn-block" role="group" aria-label="Basic example">
                     <a class="btn btn-secondary" href="/buildings/edit?building_id={{building._id}}">Edit</a>
                     <br>
@@ -31,6 +32,7 @@
                       </form>
                     </div>
                   </div>
+                  {{/if}}
                 </div>
                 <div class="col-12 col-md-4">
 
